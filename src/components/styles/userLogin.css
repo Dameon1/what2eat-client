@@ -1,0 +1,16 @@
+
+
+
+.login-form {
+  border: solid #4aaaa5 2px;
+  margin: 120px auto;
+  width: 70%;
+  font-size: 5vw;
+  padding: 10px;
+  background-color: white;
+  border-radius: 5px;
+}
+
+label , input , button {
+  margin-top:5px;
+}

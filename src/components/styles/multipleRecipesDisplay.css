@@ -1,0 +1,20 @@
+
+img {
+  max-width:100%;
+ }
+ .getRecipeButton {
+  width: 100%;
+  font-size: 3.5vw;
+}
+/* li {
+  display:inline-block;
+  margin: 5px;
+  max-width:200px ;
+} */
+.recipeImageBox {
+  max-width: 45%;
+  display: inline-block;
+  margin: 10px auto;
+  margin-left: 10px;
+  font-size: 3.5vw;
+}

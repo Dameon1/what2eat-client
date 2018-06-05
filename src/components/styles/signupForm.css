@@ -1,0 +1,12 @@
+
+
+.signupForm {
+  margin:10px;
+  width: 30%;
+  border: solid black 2px;
+  display:inline-block
+}
+
+label,h2,button {
+  margin:5px;
+}

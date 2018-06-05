@@ -1,0 +1,14 @@
+
+.recipeSearchForm {
+  margin:10px auto;
+  width:75%;
+  border: solid grey 2px;
+  border-radius: 3px;
+}
+
+
+.addIngredientForm {
+  margin:10px auto;
+  width:75%;
+}
+
