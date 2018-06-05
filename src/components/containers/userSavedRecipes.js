@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import UserDisplayedRecipes from '../display/userDisplayedRecipes';
 
-export class userSavedRecipes extends React.Component {
+export class UserSavedRecipes extends React.Component {
 
   render(){ 
  
@@ -13,8 +13,8 @@ export class userSavedRecipes extends React.Component {
           { this.props.recipes.map((recipe,index) => {
             return ( 
               <UserDisplayedRecipes {...recipe} key={index} index={index}>
-              <img src="recipe.image" alt="Some recipe"/>
-                {recipe.title}
+              {/* <img src="recipe.image" alt="Some recipe"/>
+                {recipe.title} */}
               </UserDisplayedRecipes>
             )
             }
@@ -29,4 +29,4 @@ const mapStateToProps = state => ({
   recipes: state.recipeReducer.apiRecipes || [],
 })
 
-export default connect(mapStateToProps)(userSavedRecipes);
+export default connect(mapStateToProps)(UserSavedRecipes);

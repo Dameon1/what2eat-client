@@ -7,8 +7,8 @@ import {Route, withRouter} from 'react-router-dom';
 import LoginForm from '../display/userLogin';
 import SignUpForm from '../display/signupForm';
 import Dashboard from './dashboard';
-import userSavedRecipes from './userSavedRecipes';
-
+import UserSavedRecipes from './userSavedRecipes';
+import SingleRecipe from './singleRecipe';
 export class Container extends React.Component {
  
   render(){
@@ -20,8 +20,9 @@ export class Container extends React.Component {
         <Route exact path = '/signUp' component = {SignUpForm} /> 
         <Route exact path = '/dashboard' component = {Dashboard} /> 
         <Route exact path = '/searchedRecipes' component = {Content} />
-        <Route exact path = '/myRecipes' component = {userSavedRecipes} />
-         
+        <Route exact path = '/myRecipes' component = {UserSavedRecipes} />
+        <Route path = '/recipe/:id' component = {SingleRecipe} />
+
       <Footer />
     </div>
     )
