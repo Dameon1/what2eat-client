@@ -4,7 +4,9 @@ export default function Footer () {
 
   return (
     <div className='footer'>
-    Powered by Spoonacular
+      <p className="footerText">
+        Powered by <a href="https://spoonacular.com/" className="footerLink" target="blank"> @Spoonacular</a>
+      </p>
     </div>
   )
 }

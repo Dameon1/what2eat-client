@@ -32,7 +32,7 @@ export class RecipeSearchForm extends React.Component {
     let queryString ='';
     for (const checkbox of this.selectedCheckboxes) {
       queryString += checkbox+','
-      console.log("searchingSpoonacular")
+      
     }
     let recipeString = queryString.slice(0,-1);
     this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
@@ -67,9 +67,9 @@ export class RecipeSearchForm extends React.Component {
     return (
       <div>
         <form className="addIngredientForm" onSubmit={(e)=>this.addIngredents(e)}> 
-          <input type="text" placeholder="Add Ingredient" id="addIngredient" ref={input => (this.input = input)}/>
-          <button > Add Item</button>
-          <label htmlFor="addIngredient"></label><br/>
+          <label htmlFor="addIngredient" aria-labelledby="addIngredient" className="visuallyhidden">Add Ingredients </label>
+          <input type="text" placeholder="Add Ingredient" name="addIngredient" id="addIngredient" ref={input => (this.input = input)}/>
+          <button type="submit">Add Item</button>
         </form>
         <form onSubmit={this.handleFormSubmit} className="recipeSearchForm">
           {this.createCheckboxes()}

@@ -29,6 +29,7 @@ export class LoginForm extends React.Component {
         return (  
        
             <form
+                
                 className="login-form"
                 onSubmit={this.props.handleSubmit(values =>
                     this.onSubmit(values)
@@ -37,6 +38,7 @@ export class LoginForm extends React.Component {
                 {error}
                 <label htmlFor="username">Username</label>
                 <Field
+                
                     component={Input}
                     type="text"
                     name="username"
@@ -46,6 +48,7 @@ export class LoginForm extends React.Component {
                
                 <label htmlFor="password">Password</label>
                  <Field
+               
                      component={Input}
                      type="password"
                      name="password"

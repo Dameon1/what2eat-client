@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import '../styles/singleRecipe.css';
 import {changingSingleItemView,postRecipeToDatabase} from '../../actions/userActions';
-import {Link} from 'react-router-dom';
+import {Redirect,Link} from 'react-router-dom';
 
 export class SingleRecipe extends React.Component {
 
@@ -14,12 +14,12 @@ export class SingleRecipe extends React.Component {
   
   if(this.props.viewingSingleItem){
     let currentItem = this.props.currentApiRecipeDisplayed[0];
-    let instructions = this.props.currentApiRecipeDisplayed[0].analyzedInstructions[0].steps.map((item,index) => {
+    if (currentItem.analyzedInstructions[0] === undefined) {return (<Redirect to='/dashboard'/>)}
+    let instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
       return (
         
       <div key={index}>
-      {console.log("is viewing singleItem")}
-        {" " + (index+1) + " " + item.step }
+        {" " + (index+1) + ". " + item.step + "\n"}
       </div>
       )
     });
@@ -29,12 +29,14 @@ export class SingleRecipe extends React.Component {
        <img src={currentItem.image} alt={currentItem.title} />
        <div>
         {instructions}
-         <a href={currentItem.sourceUrl} target="blank">Full Recipe</a>
+         <a href={currentItem.sourceUrl} target="blank" className="recipeLink">Full Recipe</a>
           </div>
         {(this.props.loggedIn)? <button onClick={()=>this.handleNewRecipeSubmit(currentItem.id)}>Save</button>:null}
-        <Link to={`/dashboard`}>
-      <button className="getRecipeButton" onClick={()=>this.props.dispatch(changingSingleItemView(false))}>Back</button>
-      </Link> 
+        
+      
+          <Link to="/searchedRecipes">
+            <button className="getRecipeButton" onClick={()=>this.props.dispatch(changingSingleItemView(false))}>Back</button>
+          </Link> 
       
       </div>
     )

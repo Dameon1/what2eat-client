@@ -1,5 +1,43 @@
+.landingPage  { 
+   /* background: url('../styles/images/banner.jpg') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+ background-size: cover; 
+  height:100vh; */
+}
+  
+.landingPageBox {
+  margin:40px;
+  background-color:#CAE8E8;
+  height: 40vh;
+  color:#454545;
+  border-radius:5px;
+}
+.landingPageHeader {
+  text-align: center;
+  font-size:8vw;
+  font-family: 'Times New Roman', Times, serif;
+  /* margin:25px ; */
+  /* display:flex; */
+}
 
+.landingPageBox > .smallPrint {
+  text-align: center;
+  margin-top:5px;
+  color:#454545;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-.landingPage {
-  margin-top:75px;
+.landingPageBox > .onBoarding {
+  margin-top:25px;
+  text-align:center;
+}
+
+ .buttonStyle {
+  display:block;
+  margin: 10px auto;
+  border-radius:2px;
+  color:#454545;
+  
 }

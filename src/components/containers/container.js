@@ -9,21 +9,31 @@ import SignUpForm from '../display/signupForm';
 import Dashboard from './dashboard';
 import UserSavedRecipes from './userSavedRecipes';
 import SingleRecipe from './singleRecipe';
+import LandingPage from '../display/landingPage';
+import '../styles/landingPage.css';
 export class Container extends React.Component {
  
   render(){
    return(
     <div>
-      <Header />
-       
+      <header role='banner'> 
+        <Header />
+      </header>
+      
+      <main >
+        <Route exact path = '/' component = {LandingPage} />
         <Route exact path = '/loginPage' component = {LoginForm} />
         <Route exact path = '/signUp' component = {SignUpForm} /> 
         <Route exact path = '/dashboard' component = {Dashboard} /> 
         <Route exact path = '/searchedRecipes' component = {Content} />
         <Route exact path = '/myRecipes' component = {UserSavedRecipes} />
         <Route path = '/recipe/:id' component = {SingleRecipe} />
-
-      <Footer />
+      
+      </main>
+      
+      <footer role="contentinfo">
+        <Footer />
+      </footer>    
     </div>
     )
   }

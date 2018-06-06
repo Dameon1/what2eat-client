@@ -39,6 +39,39 @@ export const fetchSingleRecipesFromSpoonacularError = error => ({
     error
 });
 
+export const FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST = 'FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST';
+export const fetchRecipesInbulkFromSpoonacularRequest = () => ({
+  type: FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST,
+  loading:true  
+})
+export const  FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS = ' FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS';
+export const fetchRecipesInbulkFromSpoonacularSuccess = recipes => ({
+    type: FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS,
+    loading:false,
+    error:null,
+    recipes
+});
+export const  FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR = ' FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR';
+export const fetchRecipesInbulkFromSpoonacularError = error => ({
+    type:  FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR, 
+    loading: false,
+    error
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 export const fetchRecipesFromSpoonacular = (queryString) => (dispatch) =>  {
     dispatch(fetchRecipesFromSpoonacularRequest());    
     return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${queryString}&limitLicense=false&number=10&ranking=1`, {
@@ -76,7 +109,7 @@ export const fetchRecipesFromSpoonacularById = (id) => (dispatch) => {
             }
 
 export const fetchRecipesFromSpoonacularInBulk = (idString) => (dispatch) => {
-    dispatch(fetchRecipesFromSpoonacularRequest());
+    dispatch(fetchRecipesInbulkFromSpoonacularRequest());
     return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/informationBulk?ids=${idString}`, {
               cache: 'no-cache', 
               credentials: 'same-origin',
@@ -88,8 +121,8 @@ export const fetchRecipesFromSpoonacularInBulk = (idString) => (dispatch) => {
               referrer: 'no-referrer', 
               })
           .then(results => results.json())        
-          .then(recipes => dispatch(fetchRecipesFromSpoonacularSuccess(recipes)))
-          .catch(error => dispatch(fetchRecipesFromSpoonacularError(error)));
+          .then(recipes => dispatch(fetchRecipesInbulkFromSpoonacularSuccess(recipes)))
+          .catch(error => dispatch(fetchRecipesInbulkFromSpoonacularError(error)));
           }
 
 

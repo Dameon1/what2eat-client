@@ -9,7 +9,7 @@ export class UserSavedRecipes extends React.Component {
     return (
       <div className='recipesDisplayBox'>
         <ul>
-          <p>something</p>
+         
           { this.props.recipes.map((recipe,index) => {
             return ( 
               <UserDisplayedRecipes {...recipe} key={index} index={index}>
@@ -26,7 +26,7 @@ export class UserSavedRecipes extends React.Component {
 }
 
 const mapStateToProps = state => ({
-  recipes: state.recipeReducer.apiRecipes || [],
+  recipes: state.recipeReducer.userRecipes || [],
 })
 
 export default connect(mapStateToProps)(UserSavedRecipes);

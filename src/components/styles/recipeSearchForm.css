@@ -2,8 +2,9 @@
 .recipeSearchForm {
   margin:10px auto;
   width:75%;
-  border: solid grey 2px;
+  border: solid #454545 2px;
   border-radius: 3px;
+  border-top:25px solid #454545;
 }
 
 
@@ -11,4 +12,9 @@
   margin:10px auto;
   width:75%;
 }
-
+.recipeSearchButton {
+  display:block;
+  margin: 10px auto;
+  border-radius:2px;
+  color:#454545;
+}

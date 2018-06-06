@@ -5,7 +5,8 @@ import  { FETCH_RECIPES_FROM_DATABASE_REQUEST , FETCH_RECIPES_FROM_DATABASE_SUCC
          CHANGING_SINGLE_ITEM_VIEW, USER_IS_NOT_SEARCHING, USER_IS_SEARCHING} from '../actions/userActions';
          
 import  { FETCH_RECIPES_FROM_SPOONACULAR_REQUEST,FETCH_RECIPES_FROM_SPOONACULAR_SUCCESS,FETCH_RECIPES_FROM_SPOONACULAR_ERROR,
-          FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR } from '../actions/spoonacularActions';
+          FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR,
+          FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST, FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS ,FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR} from '../actions/spoonacularActions';
 
 const initialState = {
     userRecipes:[],//users stored recipes
@@ -16,8 +17,8 @@ const initialState = {
     returningResults:false,
     viewingSingleItem:false,
     isSearching:true,
-    currentUser: {},
-    authToken: ''
+    
+   
     };
     
 export function recipeReducer(state=initialState, action) {
@@ -108,6 +109,23 @@ export function recipeReducer(state=initialState, action) {
               error:action.error,
               loading:action.loading
               })
+    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST: 
+              return Object.assign({}, state, {
+                ...state,
+                loading:action.loading
+                })
+    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS: 
+              return Object.assign({}, state, {
+                ...state,
+                userRecipes: [...action.recipes],
+                loading:action.loading
+                })
+    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR: 
+              return Object.assign({}, state, {
+                ...state,
+                error:action.error,
+                loading:action.loading
+                })
 
     case CHANGING_SINGLE_ITEM_VIEW:
             return Object.assign({},state,{
