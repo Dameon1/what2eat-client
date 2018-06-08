@@ -13,7 +13,7 @@
 
 ## Where to find
 
-You can visit [HERE](https://www.what2eat.website)!
+You can visit [https://www.what2eat.website](https://www.what2eat.website)!
 
 ## Instructions
 
@@ -44,8 +44,11 @@ You can visit [HERE](https://www.what2eat.website)!
 ![Mobile Single Recipe](/assets/images/singleRecipe.png)
 ![Mobile Search Screen](assets/images/homescreen.png)
 ![Widescreen Search Results](assets/images/searchedRecipes.png)
-
-
+<img align="left" width="100" height="100" src="/assets/images/singleRecipe.png">
+<img align="righ" width="100" height="100" src="/assets/images/homescreen.png">
+<p align="center">
+  <img width="460" height="300" src="/assets/images/searchedRecipes.png">
+</p>
 ## Contributions
 
 Contributions to the application are accepted. If you have a design suggestion, feel free to 
