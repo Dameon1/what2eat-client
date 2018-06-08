@@ -31,14 +31,14 @@ You can visit [https://www.what2eat.website](https://www.what2eat.website)!
 ## Coding styles
 
 -React was used for the components to display the various forms of information
+
 -React-Redux was used for the management of the state
 
 ## Screenshots
 
-
 - Mobile screenshots on the left and right
 - On the left you will find what single recipe search will provide you
-- On the right is the search for screen, where you can add and pick from options
+- On the right is the "search for" screen, where you can add and pick from options
 - The middle picture is an overview of what the search result will look like on a full sized screen
 
 <img align="left" width="200" height="300" src="/assets/images/singleRecipe.png">
@@ -46,17 +46,23 @@ You can visit [https://www.what2eat.website](https://www.what2eat.website)!
 <p align="center">
   <img width="460" height="520" src="/assets/images/searchedRecipes.png">
 </p>
+
 ## Contributions
 
-Contributions to the application are accepted. If you have a design suggestion, feel free to 
+Contributions to the application are accepted. If you have a design suggestion, feel free to
 change and make a pull request. I styled this app with the simplest of styles.
 
 ## Built With
 
 - [React](https://github.com/gitname/react-gh-pages) - The web framework used
 - [Redux: Usage with React](https://redux.js.org/basics/usage-with-react) - State management
-- [Enzyme](https://airbnb.io/enzyme/) - Testing framework
+- [Enzyme](https://airbnb.io/enzyme) - Testing framework
 - [JWT-decode](https://www.npmjs.com/package/jwt-decode) - Verification
+- [Mongo](https://www.mongodb.com) - The database used to store information
+- [Mongoose](http://mongoosejs.com/docs/guide.html) - Framework used to access DB
+- [Node.js](https://nodejs.org/en) - Runtime enviorment for package management
+- [Express.js](https://expressjs.com) - Framework used for the application
+- [bcrypt.js](https://www.npmjs.com/package/bcryptjs) - For security of user accounts
 
 ## Authors
 
