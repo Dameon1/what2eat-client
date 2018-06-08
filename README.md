@@ -4,7 +4,7 @@
 
 - A Recipe finder that allows you to see recipes based on the ingredints you have and lets you see
   how many you are missing for the particular recipe.
-- Navigating to the ** (Where to find page) will reveal a layout of a welcome page. You can make an account to    get full features or continue on to the recipe finder itself for quick access.
+- Navigating to the ** (Where to find page) will reveal a layout of a welcome page where you can make an          account to get full features or continue on to the recipe finder itself for quick access.
 - On selecting a recipe you will get a soft view of the instructions and how to make the desired
   recipe with instructional overview.
 - There is a link at the bottom of the page leading to an in-depth overview of the recipe which will
@@ -17,8 +17,8 @@ You can visit  [what2eat here](https://www.what2eat.website) !
 
 ## Instructions
 
-- The Sign up button on at the top of the home page will lead you to a  create an account form to enter your      details.
-- After signing up you can pick from some predetermined ingredients in the checkboxes provided,
+- The Sign up button at the top of the home page will lead you to a create an account form to enter your          details.
+- After signing up, you can pick from some predetermined ingredients in the checkboxes provided,
   Or you can create your own, making the application more versitile for production.
 - Upon searching, the screen will be poplulated with recipes that closely match your desired inputs, with         recipe overviews that includes images of the disered outcom, also information including how many of your 
   ingredients are used in the recipe and how many ingredients you are missing, with an option to go to the recipe overview.
