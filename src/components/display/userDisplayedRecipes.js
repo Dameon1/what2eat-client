@@ -10,7 +10,7 @@ export function userDisplayedRecipes (props){
      
       <div className="recipeImageBox" key={props.index} value={props.id} >
         {props.title}
-        <img src={props.image} alt="Some recipe"></img>
+        <img className="multipleRecipeImage" src={props.image} alt="Some recipe"></img>
         
         
         <Link to={`/recipe/${props.id}`}>
@@ -19,5 +19,7 @@ export function userDisplayedRecipes (props){
       </div>
     )
   }
+
+
 
   export default connect()(userDisplayedRecipes) 
