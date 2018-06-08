@@ -28,7 +28,6 @@ export class Container extends React.Component {
         <Route exact path = '/searchedRecipes' component = {Content} />
         <Route exact path = '/myRecipes' component = {UserSavedRecipes} />
         <Route path = '/recipe/:id' component = {SingleRecipe} />
-      
       </main>
       
       <footer role="contentinfo">

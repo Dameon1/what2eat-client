@@ -31,10 +31,10 @@ export class Header extends React.Component {
             <button className="navLinkButtons">Sign up</button>
           </Link>  
           <Link to="/dashboard">
-            <button className="navLinkButtons" onClick={()=>{this.props.dispatch(userIsSearching(true))}}>Dashboard</button>
+            <button className="navLinkButtons" >Dashboard</button>
           </Link>
           <Link to="/">
-            <button className="navLinkButtons" onClick={()=>{this.props.dispatch(userIsSearching(false))}}>Home</button>
+            <button className="navLinkButtons" >Home</button>
           </Link>
           </div>
          

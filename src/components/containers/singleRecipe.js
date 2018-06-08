@@ -22,18 +22,26 @@ export class SingleRecipe extends React.Component {
     const arrayOfRecipesFromSavedRecipes = this.props.recipes.map((recipe)=>recipe.recipeId);
     
   if(this.props.viewingSingleItem){
+    let instructions = "<div>no instructions</div>";
+
+    
+
+
     let currentItem = this.props.currentApiRecipeDisplayed[0];
     if (!currentItem){return}
-    if (currentItem.analyzedInstructions[0] === undefined) {return (<Redirect to='/dashboard'/>)}
-    let instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
-      return (
-        
-      <div key={index}>
-        {" " + (index+1) + ". " + item.step + "\n"}
-      </div>
-      )
-    });
+
+
+   if (currentItem.analyzedInstructions[0] ) {
+   instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
+            return (        
+            <div key={index}>
+              {" " + (index+1) + ". " + item.step + "\n"}
+            </div>
+            )
+          });
+        }
     if(instructions === undefined) {return}
+   
     return (
       <div className='recipeOverview'>
        <img src={currentItem.image} alt={currentItem.title} />

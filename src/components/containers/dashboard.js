@@ -1,12 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import RecipeSearchForm  from '../display/recipeSearchForm';
-import {fetchRecipeIdsFromDatabase} from '../../actions/userActions'
+import {fetchRecipeIdsFromDatabase,userIsSigningIn} from '../../actions/userActions'
 import '../styles/dashboard.css';
 export class Dashboard extends React.Component {
     
     componentWillMount(){
         if(this.props.loggedIn){
+          //this.props.dispatch(userIsSigningIn())
           this.props.dispatch(fetchRecipeIdsFromDatabase(this.props.userId,this.props.authToken))
         } 
     }       

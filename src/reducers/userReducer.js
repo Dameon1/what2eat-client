@@ -1,8 +1,9 @@
 
-import  { FETCH_RECIPES_FROM_DATABASE_REQUEST , FETCH_RECIPES_FROM_DATABASE_SUCCESS, FETCH_RECIPES_FROM_DATABASE_ERROR,
-   POST_RECIPE_TO_DATABASE_REQUEST , POST_RECIPE_TO_DATABASE_SUCCESS, POST_RECIPE_TO_DATABASE_ERROR,
-         REMOVE_RECIPE_FROM_DATABASE_REQUEST , REMOVE_RECIPE_FROM_DATABASE_SUCCESS, REMOVE_RECIPE_FROM_DATABASE_ERROR,
-         CHANGING_SINGLE_ITEM_VIEW, USER_IS_NOT_SEARCHING, USER_IS_SEARCHING,USER_IS_SIGNING_OUT} from '../actions/userActions';
+import  { 
+      FETCH_RECIPES_FROM_DATABASE_REQUEST , FETCH_RECIPES_FROM_DATABASE_SUCCESS, FETCH_RECIPES_FROM_DATABASE_ERROR,
+      POST_RECIPE_TO_DATABASE_REQUEST , POST_RECIPE_TO_DATABASE_SUCCESS, POST_RECIPE_TO_DATABASE_ERROR,
+      REMOVE_RECIPE_FROM_DATABASE_REQUEST , REMOVE_RECIPE_FROM_DATABASE_SUCCESS, REMOVE_RECIPE_FROM_DATABASE_ERROR,
+      CHANGING_SINGLE_ITEM_VIEW, USER_IS_NOT_SEARCHING, USER_IS_SEARCHING,USER_IS_SIGNING_OUT, USER_IS_SIGNING_IN} from '../actions/userActions';
          
 import  { FETCH_RECIPES_FROM_SPOONACULAR_REQUEST,FETCH_RECIPES_FROM_SPOONACULAR_SUCCESS,FETCH_RECIPES_FROM_SPOONACULAR_ERROR,
           FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR,
@@ -32,7 +33,8 @@ export function recipeReducer(state=initialState, action) {
           return Object.assign({}, state, {
               ...state,
               recipes: [...action.recipes],
-              loading:action.loading
+              loading:action.loading,
+             
               })
     case FETCH_RECIPES_FROM_DATABASE_ERROR: 
           return Object.assign({}, state, {
@@ -140,7 +142,16 @@ export function recipeReducer(state=initialState, action) {
     case USER_IS_SEARCHING:
           return Object.assign({},state,{
            ...state,
-           isSearching:true
+           isSearching:true,
+           
+         })
+    case USER_IS_SIGNING_IN:
+    return Object.assign({},state,{
+      ...state,
+      userRecipes:[],
+      apiRecipes:[],
+      currentApiRecipeDisplayed:[],
+      viewingSingleItem:false
          })
     case USER_IS_SIGNING_OUT:
     return Object.assign({},state,{
@@ -150,7 +161,7 @@ export function recipeReducer(state=initialState, action) {
       apiRecipes:[],
       currentApiRecipeDisplayed:[],
       viewingSingleItem:false
-    })
+        })
     default:
       return state
   }

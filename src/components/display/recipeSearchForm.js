@@ -36,8 +36,10 @@ export class RecipeSearchForm extends React.Component {
     }
    
     let recipeString = queryString.slice(0,-1);
-    this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
     this.props.dispatch(userIsNotSearching());
+    this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
+    //if(this.props.isSearching){ return <Redirect to='/searchedRecipes' />}
+    
     }
     
   createCheckbox = label => (
@@ -55,18 +57,12 @@ export class RecipeSearchForm extends React.Component {
   addIngredents = (e) => {
     e.preventDefault();
     let value = this.input.value;
-    
-    //1 map
     let recipeItemsToLowerCase = this.state.items.map(item => item.toLowerCase());
-    //2 to lower case
     let newIngredientToLowerCase = value.toLowerCase();
-    //3 includes
     if (recipeItemsToLowerCase.includes(newIngredientToLowerCase))
     {return alert("Ingredient already included")}
     if (value.trim().length<3)
     {return alert("Ingredient is invalid")}
-    
-    
     this.setState({
       items:[...this.state.items,value]
     })
@@ -86,7 +82,12 @@ export class RecipeSearchForm extends React.Component {
         </form>
         <form onSubmit={this.handleFormSubmit} className="recipeSearchForm">
           {this.createCheckboxes()}
-          <button className="recipeSearchButton" onClick={this.handleFormSubmit} type="submit">Search</button>
+          
+          
+         
+           <button className="recipeSearchButton" onClick={this.handleFormSubmit} type="submit">Search</button>
+         
+       
         </form>  
         
       </div>

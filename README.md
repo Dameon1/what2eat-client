@@ -45,6 +45,7 @@ Contributions to the application are accepted. If you have a design suggestion, 
 change and make a pull request. I styled this app with the simplest of styles.
 
 ## Built With
+
 * [React](https://github.com/gitname/react-gh-pages) - The web framework used
 - [Redux: Usage with React](https://redux.js.org/basics/usage-with-react) - State management
 * [Enzyme](https://airbnb.io/enzyme/) - Testing framework

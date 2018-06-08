@@ -6,7 +6,7 @@
   left:0;
   right:0;
   bottom:0;
-  }
+}
 
 .footerText {
   margin-top:10px;
@@ -14,5 +14,4 @@
  .footerLink {
     color:white;
     text-decoration:none;
-   
-  }
+}

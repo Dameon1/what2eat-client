@@ -71,6 +71,12 @@ export const USER_IS_SEARCHING = 'USER_IS_SEARCHING';
 export const userIsSearching = () => ({
     type: USER_IS_SEARCHING, 
 });
+export const USER_IS_SIGNING_IN = 'USER_IS_SIGNING_IN';
+export const userIsSigningIn = () => ({
+    type: USER_IS_SIGNING_IN, 
+});
+
+
 export const USER_IS_SIGNING_OUT = 'USER_IS_SIGNING_OUT';
 export const userIsSigningOut = () => ({
     type: USER_IS_SIGNING_OUT, 

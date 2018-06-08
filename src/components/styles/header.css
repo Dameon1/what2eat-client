@@ -8,14 +8,13 @@
   left:0;
   right:0;
   top:0;
-  
-  }
+}
 
 .headerText {
   color:#454545;
   padding: 10px;
   display:inline-block;
-  font-size:6vw;
+  font-size:4.5em;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
