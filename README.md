@@ -41,13 +41,10 @@ You can visit [https://www.what2eat.website](https://www.what2eat.website)!
 - On the right is the search for screen, where you can add and pick from options
 - The middle picture is an overview of what the search result will look like on a full sized screen
 
-![Mobile Single Recipe](/assets/images/singleRecipe.png)
-![Mobile Search Screen](assets/images/homescreen.png)
-![Widescreen Search Results](assets/images/searchedRecipes.png)
-<img align="left" width="100" height="100" src="/assets/images/singleRecipe.png">
-<img align="right" width="100" height="100" src="/assets/images/homescreen.png">
+<img align="left" width="200" height="300" src="/assets/images/singleRecipe.png">
+<img align="right" width="200" height="300" src="/assets/images/homescreen.png">
 <p align="center">
-  <img width="460" height="300" src="/assets/images/searchedRecipes.png">
+  <img width="460" height="520" src="/assets/images/searchedRecipes.png">
 </p>
 ## Contributions
 
