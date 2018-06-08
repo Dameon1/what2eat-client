@@ -44,7 +44,7 @@ You can visit  [what2eat here](https://www.what2eat.website) !
 <img align="left" width="200" height="300" src="/assets/images/singleRecipe.png">
 <img align="right" width="200" height="300" src="/assets/images/homescreen.png">
 <p align="center">
-  <img width="460" height="520" src="/assets/images/searchedRecipes.png">
+  <img width="600" height="520" src="/assets/images/searchedRecipes.png">
 </p>
 
 ## Contributions
