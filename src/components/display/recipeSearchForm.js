@@ -15,6 +15,7 @@ export class RecipeSearchForm extends React.Component {
         items : ['Chicken','Eggs',"Cheese","Flour","Salt","Bacon","Honey","Butter","Cayenne","Sugar"]
         }
       }
+
   componentWillMount = () => {
     this.selectedCheckboxes = new Set();
   }
@@ -33,14 +34,11 @@ export class RecipeSearchForm extends React.Component {
     if(this.selectedCheckboxes.size === 0){return alert('Please select some ingredients')}
     for (const checkbox of this.selectedCheckboxes) {
       queryString += checkbox+','
-    }
-   
+    }   
     let recipeString = queryString.slice(0,-1);
     this.props.dispatch(userIsNotSearching());
     this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
-    //if(this.props.isSearching){ return <Redirect to='/searchedRecipes' />}
-    
-    }
+  }
     
   createCheckbox = label => (
     <Checkbox 
@@ -71,8 +69,7 @@ export class RecipeSearchForm extends React.Component {
 
   render() {
     if(!this.props.isSearching){ return <Redirect to='/searchedRecipes' />}
-     
-     
+          
     return (
       <div>
         <form className="addIngredientForm" onSubmit={(e)=>this.addIngredents(e)}> 
@@ -82,16 +79,9 @@ export class RecipeSearchForm extends React.Component {
         </form>
         <form onSubmit={this.handleFormSubmit} className="recipeSearchForm">
           {this.createCheckboxes()}
-          
-          
-         
-           <button className="recipeSearchButton" onClick={this.handleFormSubmit} type="submit">Search</button>
-         
-       
+          <button className="recipeSearchButton" onClick={this.handleFormSubmit} type="submit">Search</button>
         </form>  
-        
       </div>
-     
     );
   }
 }

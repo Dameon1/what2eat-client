@@ -20,20 +20,13 @@ export class SingleRecipe extends React.Component {
   
   render(){
     const arrayOfRecipesFromSavedRecipes = this.props.recipes.map((recipe)=>recipe.recipeId);
-    
-  if(this.props.viewingSingleItem){
+    if(this.props.viewingSingleItem){
     let instructions = "";
-
-    
-
-
     let currentItem = this.props.currentApiRecipeDisplayed[0];
     if (!currentItem){return}
-
-
-   if (currentItem.analyzedInstructions[0] ) {
-   instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
-            return (        
+    if (currentItem.analyzedInstructions[0] ) {
+        instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
+          return (        
             <div key={index}>
               {" " + (index+1) + ". " + item.step + "\n"}
             </div>
@@ -47,20 +40,21 @@ export class SingleRecipe extends React.Component {
        <img className="sigleRecipeImage" src={currentItem.image} alt={currentItem.title} />
        <div>
         {instructions}
-         <a href={currentItem.sourceUrl} target="blank" className="recipeLink">Full Recipe</a>
-          </div>
-        {(this.props.loggedIn && !arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
-           <button onClick={()=>this.handleNewRecipeSubmit(currentItem.id)}>Save</button> 
+        <a href={currentItem.sourceUrl} target="blank" className="recipeLink">Full Recipe</a>
+       </div>
+       {(this.props.loggedIn && !arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
+          <button onClick={()=>this.handleNewRecipeSubmit(currentItem.id)}>Save</button> 
            : (this.props.loggedIn && arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
-           <button onClick={()=>this.handleRemoveRecipeSubmit(currentItem.id)}>UnSave</button> :   null}
+              <button onClick={()=>this.handleRemoveRecipeSubmit(currentItem.id)}>UnSave</button> 
+               : null}
         
-      {(this.props.loggedIn && this.props.apiRecipes.length === 0)?
-        <Link to="/myRecipes">
-          <button className="singleRecipeBackButton" onClick={() => this.handleBackButtonClicked()}>Back</button>
-        </Link> : 
-        <Link to="/searchedRecipes">
+       {(this.props.loggedIn && this.props.apiRecipes.length === 0) ?
+         <Link to="/myRecipes">
+           <button className="singleRecipeBackButton" onClick={() => this.handleBackButtonClicked()}>Back</button>
+         </Link> 
+       : <Link to="/searchedRecipes">
           <button className="singleRecipeBackButton" onClick={()=> this.handleBackButtonClicked()}>Back</button>
-        </Link> }        
+         </Link> }        
       </div>
     )
   }

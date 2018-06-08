@@ -8,4 +8,4 @@ describe('<Container />', () => {
      it('Renders without crashing', () => {
          shallow(<Content />);
      });
-    })
+})

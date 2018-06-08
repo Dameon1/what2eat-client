@@ -9,21 +9,16 @@ export class UserSavedRecipes extends React.Component {
     this.props.dispatch(getUserRecipesInBulkFromSpoonacular(this.props.recipes))
   }
 
-
   render(){ 
  
     return (
       <div className='recipesDisplayBox'>
         <ul>
-         
-          { this.props.userRecipes.map((recipe,index) => {
-            return ( 
-              <UserDisplayedRecipes {...recipe} key={index} index={index}/>
-             
-           
-            )
-            }
-          )}
+        {this.props.userRecipes.map((recipe,index) => {
+          return ( 
+            <UserDisplayedRecipes {...recipe} key={index} index={index}/>
+            )}
+        )}
         </ul>
       </div>
     )

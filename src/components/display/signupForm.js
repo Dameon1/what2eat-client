@@ -10,8 +10,6 @@ import {Redirect} from 'react-router-dom';
 const passwordLength = length({min: 4, max: 72});
 const matchesPassword = matches('password');
 
-
-
 export class SignUpForm extends React.Component {
     onSubmit(values) {
         const {username, password} = values;
@@ -78,8 +76,3 @@ const mapStateToProps = state => ({
     onSubmitFail: (errors, dispatch) => 
         dispatch(focus('registration', Object.keys(errors)[0]))
 })(SignUpForm));
-
-
-
-   
-    
