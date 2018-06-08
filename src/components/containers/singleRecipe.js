@@ -44,7 +44,7 @@ export class SingleRecipe extends React.Component {
    
     return (
       <div className='recipeOverview'>
-       <img src={currentItem.image} alt={currentItem.title} />
+       <img className="sigleRecipeImage" src={currentItem.image} alt={currentItem.title} />
        <div>
         {instructions}
          <a href={currentItem.sourceUrl} target="blank" className="recipeLink">Full Recipe</a>
