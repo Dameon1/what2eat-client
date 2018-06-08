@@ -2,31 +2,31 @@
 
 ## Application details
 
-- A recipe finder for the ingredients that you have.
-- Navigating to the ** (Where to find page) will reveal a layout of a welcome page. You can make an account to    get full features or continue on the the finder itself for quick access.
-- Users can enter ingredients that they have and get back recipes that contains those ingredients, along with
-  which ingredients they are missing.
-- On selecting a recipe you will get a soft overview of the instructions and how to make desired 
-  recipe
-- There is a link at the bottom of the page leading to an in-depth overview of the recipe.
-- If signed in , A user can keep track of saved recipes for quick access to get back to them , along with        removing them if they are no longer wanted.
+- A Recipe finder that allows you to see recipes based on the ingredints you have and lets you see
+  how many you are missing for the particular recipe.
+- Navigating to the ** (Where to find page) will reveal a layout of a welcome page. You can make an account to    get full features or continue on to the recipe finder itself for quick access.
+- On selecting a recipe you will get a soft view of the instructions and how to make the desired
+  recipe with instructional overview.
+- There is a link at the bottom of the page leading to an in-depth overview of the recipe which will
+  lead the user to a new page where a more in-depth view of the recipe is kept.
+- Created account users can keep track of saved recipes for quick access to get back to them , along with         removing them if they are no longer wanted.
 
 ## Where to find
 
-You can visit [https://www.what2eat.website](https://www.what2eat.website)!
+You can visit  [what2eat here](https://www.what2eat.website) !
 
 ## Instructions
 
-- Sign up button on the home page will lead you to a form to create an account.
+- The Sign up button on at the top of the home page will lead you to a  create an account form to enter your      details.
 - After signing up you can pick from some predetermined ingredients in the checkboxes provided,
-  Or you can create your own, which is why you came here.
-- The screen will be poplulated with recipes that closely match your desired inputs, with an option to go to
- the recipe overview.
-- At the recipe overview page , you will have a list of instructions and a save button if you choose to
- want to keep it around for quick access.
+  Or you can create your own, making the application more versitile for production.
+- Upon searching, the screen will be poplulated with recipes that closely match your desired inputs, with         recipe overviews that includes images of the disered outcom, also information including how many of your 
+  ingredients are used in the recipe and how many ingredients you are missing, with an option to go to the recipe overview.
+- At the recipe overview page , you will be greated you with a larger view of the recipe outcome picture
+  along with a list of instructions and a save button if you want to keep it around for quick access.
 - Once you have saved a few recipes there is a separate page that keeps track of all the recipes you have
- saved in the MyRecipes link provide at the top of the page.
-- On the MyRecipes page you find a similar display to the search. Displaying all the recipes you have kept
+  saved in the MyRecipes link provide at the top of the page.
+- On the MyRecipes page you find a similar display to the search. Displaying all the recipes you have kept.
 
 ## Coding styles
 
