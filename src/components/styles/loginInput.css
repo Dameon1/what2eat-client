@@ -4,4 +4,14 @@
 .text-input {
   width:80%;
   border-radius:2px;
+  height:35px;
+}
+.signupForm {
+  margin:10px;
+  width: 30%;
+  border: solid black 2px;
+  display:inline-block
+}
+.signUpLabel,.signUpButton,.signUpInput {
+  margin:50px;
 }

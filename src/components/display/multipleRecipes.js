@@ -9,7 +9,7 @@ export function MultipleRecipesDisplay (props){
   return (
     <div className="recipeImageBox" key={props.index} value={props.id} >
         {props.title}
-      <img src={props.image} alt="Some recipe"></img>
+      <img className="multipleRecipeImage" src={props.image} alt="Some recipe"></img>
       <p>Ingredients used: {props.usedIngredientCount}</p>
       <p>Missing ingredients: {props.missedIngredientCount}</p>
       <Link to={`/recipe/${props.id}`}>

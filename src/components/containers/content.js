@@ -6,7 +6,7 @@ export default class Content extends React.Component  {
 
   render(){
     return(
-      <div> Content Displayed Below
+      <div> 
         <RecipeDisplay /> 
       </div>
     )

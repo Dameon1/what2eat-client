@@ -7,7 +7,7 @@ export class Dashboard extends React.Component {
     
     componentWillMount(){
         if(this.props.loggedIn){
-          //this.props.dispatch(userIsSigningIn())
+          this.props.dispatch(userIsSigningIn())
           this.props.dispatch(fetchRecipeIdsFromDatabase(this.props.userId,this.props.authToken))
         } 
     }       

@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import  MultipleRecipesDisplay  from './multipleRecipes';
-import { userIsSearching ,userIsNotSearching } from '../../actions/userActions';
+import { userIsSearching  } from '../../actions/userActions';
 
 export class RecipeDisplay extends React.Component{
 

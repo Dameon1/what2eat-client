@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import '../styles/singleRecipe.css';
 import {changingSingleItemView,postRecipeToDatabase,updateStateWithDatabaseResults, removeRecipeFromDatabase} from '../../actions/userActions';
-import {Redirect,Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 export class SingleRecipe extends React.Component {
 
@@ -22,7 +22,7 @@ export class SingleRecipe extends React.Component {
     const arrayOfRecipesFromSavedRecipes = this.props.recipes.map((recipe)=>recipe.recipeId);
     
   if(this.props.viewingSingleItem){
-    let instructions = "<div>no instructions</div>";
+    let instructions = "";
 
     
 
