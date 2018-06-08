@@ -10,7 +10,7 @@ export default function LandingPage() {
     <div className='landingPage'>
       <div className="landingPageBox">
       <h2 className='landingPageHeader'>You Have Ingredients?</h2>
-      <p className='smallPrint'> (Find recipes for those ingrediets!)</p>
+      <p className='smallPrint'> (Find recipes for those ingredients!)</p>
       <p className="onBoarding">Sign up today to enjoy full features</p>
       <Link to='/signUp'><button className="buttonStyle">SignUp</button></Link>
       

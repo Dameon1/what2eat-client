@@ -1,4 +1,6 @@
 import {API_BASE_URL} from '../config';
+import {fetchRecipesFromSpoonacularInBulk} from './spoonacularActions';
+
 
 export const FETCH_RECIPES_FROM_DATABASE_REQUEST = 'FETCH_RECIPES_FROM_DATABASE_REQUEST';
 export const fetchRecipesFromDatabaseRequest = () => ({
@@ -69,6 +71,10 @@ export const USER_IS_SEARCHING = 'USER_IS_SEARCHING';
 export const userIsSearching = () => ({
     type: USER_IS_SEARCHING, 
 });
+export const USER_IS_SIGNING_OUT = 'USER_IS_SIGNING_OUT';
+export const userIsSigningOut = () => ({
+    type: USER_IS_SIGNING_OUT, 
+});
 
 
 export const fetchRecipeIdsFromDatabase = (userId,authToken) => (dispatch) => {
@@ -101,12 +107,12 @@ export const postRecipeToDatabase = (recipeId,userId,authToken) => (dispatch) =>
         return res.json();
         })
     .then(response => {
-        dispatch(postRecipeToDatabaseSuccess());
-        dispatch(fetchRecipeIdsFromDatabase(userId,authToken))} )
+        dispatch(postRecipeToDatabaseSuccess())
+        })
     .catch(error => dispatch(postRecipeToDataBaseError(error)));
     };
 
-export const removeRecipe = (id,userId,authToken) => (dispatch) => {
+export const removeRecipeFromDatabase = (id,userId,authToken) => (dispatch) => {
     
     return fetch(`${API_BASE_URL}/api/recipes/${id}`, {
         cache: 'no-cache', 
@@ -120,5 +126,27 @@ export const removeRecipe = (id,userId,authToken) => (dispatch) => {
     .then( () =>  dispatch(fetchRecipeIdsFromDatabase(userId,authToken)) )
     .catch(error => dispatch(fetchRecipesFromDatabaseError(error)));
 }
+
+
+export const updateStateWithDatabaseResults = (userId,authToken) => (dispatch) => {
+    dispatch(fetchRecipeIdsFromDatabase(userId,authToken))
+}
+ 
+export const getUserRecipesInBulkFromSpoonacular = (recipes) => (dispatch) => {
+
+        let recipeBulkString="";
+        for (let i =0;i<recipes.length;i++){
+          recipeBulkString += recipes[i].recipeId+",";
+        }
+        let recipeString = recipeBulkString.slice(0,-1);
+        dispatch(fetchRecipesFromSpoonacularInBulk(recipeString))
+}
+
+export const signingUserOut = () => (dispatch) => {
+    dispatch(userIsSigningOut());
+}
+
+
+
 
 

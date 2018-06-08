@@ -7,11 +7,10 @@ import {
  } from '../actions/auth';
 
  const initialState = {
-    authToken: null, // authToken !== null does not mean it has been validated
+    authToken: null, 
     currentUser: "",
     loading: false,
     error: null,
-    recipeIds:null,
     loggedIn:false
     
 };
@@ -24,7 +23,7 @@ export function authReducer(state = initialState, action) {
     } else if (action.type === CLEAR_AUTH) {
         return Object.assign({}, state, {
             authToken: null,
-            currentUser: null,
+            currentUser: "",
             loggedIn:false
         });
     } else if (action.type === AUTH_REQUEST) {

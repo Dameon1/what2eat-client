@@ -3,11 +3,16 @@ import {Link} from 'react-router-dom';
 import '../styles/header.css';
 import {signUserOut} from '../../actions/auth';
 import {connect} from 'react-redux';
-import { userIsSearching } from "../../actions/userActions";
+import { userIsSearching , signingUserOut } from "../../actions/userActions";
 
 
 
 export class Header extends React.Component {
+
+  handleSignOut(){
+   this.props.dispatch(signingUserOut());
+   this.props.dispatch(signUserOut());
+  }
 
 
   render(){
@@ -49,7 +54,7 @@ export class Header extends React.Component {
             <button className="navLinkButtons" >My recipes</button>
           </Link> 
           <Link to="/">
-            <button className="navLinkButtons" onClick={()=>{this.props.dispatch(signUserOut())}}>Sign Out</button>
+            <button className="navLinkButtons" onClick={()=>{this.handleSignOut()}}>Sign Out</button>
           </Link> 
       </div>
       </div>

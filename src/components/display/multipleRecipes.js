@@ -19,14 +19,6 @@ export function MultipleRecipesDisplay (props){
       </div>
     )
       }
-  
-    
-  // const mapStateToProps = state => ({  
-  //     viewingSingleItem:state.recipeReducer.viewingSingleItem
-  // })
-  
+   
   export default connect()(MultipleRecipesDisplay) 
   
-  
-
-

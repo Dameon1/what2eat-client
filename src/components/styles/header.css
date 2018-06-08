@@ -22,6 +22,8 @@
 .navLinkButtons {
   border-radius:2px;
   margin-right:2px;
+  display: inline-block;
+  
 }
 
 

@@ -4,7 +4,7 @@ img {
  }
  .getRecipeButton {
   width: 100%;
-  font-size: 3.5vw;
+  font-size: 3vw;
 }
 /* li {
   display:inline-block;
@@ -12,6 +12,7 @@ img {
   max-width:200px ;
 } */
 .recipeImageBox {
+  text-align: center;
   max-width: 45%;
   display: inline-block;
   margin: 10px auto;

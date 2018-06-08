@@ -6,15 +6,34 @@
   border-radius: 3px;
   border-top:25px solid #454545;
 }
-
-
-.addIngredientForm {
-  margin:10px auto;
-  width:75%;
-}
 .recipeSearchButton {
   display:block;
   margin: 10px auto;
   border-radius:2px;
   color:#454545;
+}
+.addIngredientForm {
+  border: solid #454545 2px;
+  border-radius:2px;
+  margin:10px auto;
+  width:75%;
+  height:10vh;
+  text-align: center;
+} 
+.addIngredientLabel {
+  display:inline-block;
+  width:100%;
+}
+.addIngredientInputField {
+  width:60%;
+  height : 25px;
+  display:inline-block;
+  margin:5px;
+}
+.addIngredientButton {
+  font-size: 14px;
+  text-align: center;
+  display:inline-block;
+  height : 25px;
+  border-radius:2px;
 }

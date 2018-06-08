@@ -12,7 +12,7 @@ export class RecipeSearchForm extends React.Component {
     super(props);
   
       this.state= {
-        items : ['Chicken','Eggs',"Cheese","Flour","Salt","Bacon","Honey","Butter","Cayenne Pepper","Brown Sugar"]
+        items : ['Chicken','Eggs',"Cheese","Flour","Salt","Bacon","Honey","Butter","Cayenne","Sugar"]
         }
       }
   componentWillMount = () => {
@@ -30,10 +30,11 @@ export class RecipeSearchForm extends React.Component {
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
     let queryString ='';
+    if(this.selectedCheckboxes.size === 0){return alert('Please select some ingredients')}
     for (const checkbox of this.selectedCheckboxes) {
       queryString += checkbox+','
-      
     }
+   
     let recipeString = queryString.slice(0,-1);
     this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
     this.props.dispatch(userIsNotSearching());
@@ -54,6 +55,18 @@ export class RecipeSearchForm extends React.Component {
   addIngredents = (e) => {
     e.preventDefault();
     let value = this.input.value;
+    
+    //1 map
+    let recipeItemsToLowerCase = this.state.items.map(item => item.toLowerCase());
+    //2 to lower case
+    let newIngredientToLowerCase = value.toLowerCase();
+    //3 includes
+    if (recipeItemsToLowerCase.includes(newIngredientToLowerCase))
+    {return alert("Ingredient already included")}
+    if (value.trim().length<3)
+    {return alert("Ingredient is invalid")}
+    
+    
     this.setState({
       items:[...this.state.items,value]
     })
@@ -67,9 +80,9 @@ export class RecipeSearchForm extends React.Component {
     return (
       <div>
         <form className="addIngredientForm" onSubmit={(e)=>this.addIngredents(e)}> 
-          <label htmlFor="addIngredient" aria-labelledby="addIngredient" className="visuallyhidden">Add Ingredients </label>
-          <input type="text" placeholder="Add Ingredient" name="addIngredient" id="addIngredient" ref={input => (this.input = input)}/>
-          <button type="submit">Add Item</button>
+          <label htmlFor="addIngredient" aria-labelledby="addIngredient" className="addIngredientLabel">Add Ingredients Here</label>
+          <input className="addIngredientInputField" type="text" placeholder="Add Ingredient" name="addIngredient" id="addIngredient" ref={input => (this.input = input)}/>
+          <button className="addIngredientButton" type="submit">Add</button>
         </form>
         <form onSubmit={this.handleFormSubmit} className="recipeSearchForm">
           {this.createCheckboxes()}

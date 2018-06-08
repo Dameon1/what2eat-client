@@ -2,7 +2,7 @@
 import  { FETCH_RECIPES_FROM_DATABASE_REQUEST , FETCH_RECIPES_FROM_DATABASE_SUCCESS, FETCH_RECIPES_FROM_DATABASE_ERROR,
    POST_RECIPE_TO_DATABASE_REQUEST , POST_RECIPE_TO_DATABASE_SUCCESS, POST_RECIPE_TO_DATABASE_ERROR,
          REMOVE_RECIPE_FROM_DATABASE_REQUEST , REMOVE_RECIPE_FROM_DATABASE_SUCCESS, REMOVE_RECIPE_FROM_DATABASE_ERROR,
-         CHANGING_SINGLE_ITEM_VIEW, USER_IS_NOT_SEARCHING, USER_IS_SEARCHING} from '../actions/userActions';
+         CHANGING_SINGLE_ITEM_VIEW, USER_IS_NOT_SEARCHING, USER_IS_SEARCHING,USER_IS_SIGNING_OUT} from '../actions/userActions';
          
 import  { FETCH_RECIPES_FROM_SPOONACULAR_REQUEST,FETCH_RECIPES_FROM_SPOONACULAR_SUCCESS,FETCH_RECIPES_FROM_SPOONACULAR_ERROR,
           FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS,FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR,
@@ -17,7 +17,7 @@ const initialState = {
     returningResults:false,
     viewingSingleItem:false,
     isSearching:true,
-    
+    recipes:[]
    
     };
     
@@ -49,7 +49,7 @@ export function recipeReducer(state=initialState, action) {
           return Object.assign({}, state, {
               ...state,
               loading:action.loading,
-              recipes:[...this.state,action.recipe]
+              //recipes:[...this.state,action.recipe]
               })
     case POST_RECIPE_TO_DATABASE_ERROR: 
             return Object.assign({}, state, {
@@ -142,6 +142,15 @@ export function recipeReducer(state=initialState, action) {
            ...state,
            isSearching:true
          })
+    case USER_IS_SIGNING_OUT:
+    return Object.assign({},state,{
+      ...state,
+      recipes:[],
+      userRecipes:[],
+      apiRecipes:[],
+      currentApiRecipeDisplayed:[],
+      viewingSingleItem:false
+    })
     default:
       return state
   }

@@ -1,19 +1,29 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import '../styles/singleRecipe.css';
-import {changingSingleItemView,postRecipeToDatabase} from '../../actions/userActions';
+import {changingSingleItemView,postRecipeToDatabase,updateStateWithDatabaseResults, removeRecipeFromDatabase} from '../../actions/userActions';
 import {Redirect,Link} from 'react-router-dom';
 
 export class SingleRecipe extends React.Component {
 
   handleNewRecipeSubmit(recipeId){
       this.props.dispatch(postRecipeToDatabase(recipeId,this.props.userId,this.props.authToken));
+      this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken));      
    }
+  handleRemoveRecipeSubmit(recipeId){
+    this.props.dispatch(removeRecipeFromDatabase(recipeId,this.props.userId,this.props.authToken));
+    this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken));
+  }
+  handleBackButtonClicked(){
+    this.props.dispatch(changingSingleItemView(false));
+  }
   
   render(){
-  
+    const arrayOfRecipesFromSavedRecipes = this.props.recipes.map((recipe)=>recipe.recipeId);
+    
   if(this.props.viewingSingleItem){
     let currentItem = this.props.currentApiRecipeDisplayed[0];
+    if (!currentItem){return}
     if (currentItem.analyzedInstructions[0] === undefined) {return (<Redirect to='/dashboard'/>)}
     let instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
       return (
@@ -31,13 +41,18 @@ export class SingleRecipe extends React.Component {
         {instructions}
          <a href={currentItem.sourceUrl} target="blank" className="recipeLink">Full Recipe</a>
           </div>
-        {(this.props.loggedIn)? <button onClick={()=>this.handleNewRecipeSubmit(currentItem.id)}>Save</button>:null}
+        {(this.props.loggedIn && !arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
+           <button onClick={()=>this.handleNewRecipeSubmit(currentItem.id)}>Save</button> 
+           : (this.props.loggedIn && arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
+           <button onClick={()=>this.handleRemoveRecipeSubmit(currentItem.id)}>UnSave</button> :   null}
         
-      
-          <Link to="/searchedRecipes">
-            <button className="getRecipeButton" onClick={()=>this.props.dispatch(changingSingleItemView(false))}>Back</button>
-          </Link> 
-      
+      {(this.props.loggedIn && this.props.apiRecipes.length === 0)?
+        <Link to="/myRecipes">
+          <button className="singleRecipeBackButton" onClick={() => this.handleBackButtonClicked()}>Back</button>
+        </Link> : 
+        <Link to="/searchedRecipes">
+          <button className="singleRecipeBackButton" onClick={()=> this.handleBackButtonClicked()}>Back</button>
+        </Link> }        
       </div>
     )
   }
@@ -49,8 +64,9 @@ const mapStateToProps = state => ({
   viewingSingleItem:state.recipeReducer.viewingSingleItem,
   loggedIn: state.authReducer.loggedIn,
   userId: state.authReducer.currentUser.id || "",
-  authToken:state.authReducer.authToken
- 
+  authToken:state.authReducer.authToken,
+  recipes:state.recipeReducer.recipes || [],
+  apiRecipes:state.recipeReducer.apiRecipes
 })
 
 export default connect(mapStateToProps)(SingleRecipe);
