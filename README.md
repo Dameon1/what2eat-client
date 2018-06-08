@@ -2,15 +2,14 @@
 
 ## Application details
 
-- A recipe finder for the ingredients you do have.
+- A recipe finder for the ingredients that you have.
 - Navigating to the ** (Where to find page) will reveal a layout of a welcome page. You can make an account to    get full features or continue on the the finder itself for quick access.
 - Users can enter ingredients that they have and get back recipes that contains those ingredients, along with
   which ingredients they are missing.
-- On selecting a recipe you will get a soft overview of the instructions and how to make desired recipe
-
--There is a link at the bottom of the page leading to an in-depth overview of the recipe.
-
-- If signed in , A user can keep track of saved recipes for quick access to get back to them , along with        removing them if they are no longer wanted. 
+- On selecting a recipe you will get a soft overview of the instructions and how to make desired 
+  recipe
+- There is a link at the bottom of the page leading to an in-depth overview of the recipe.
+- If signed in , A user can keep track of saved recipes for quick access to get back to them , along with        removing them if they are no longer wanted.
 
 ## Where to find
 
