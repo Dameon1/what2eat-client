@@ -14,8 +14,11 @@ export class SingleRecipe extends React.Component {
     this.props.dispatch(removeRecipeFromDatabase(recipeId,this.props.userId,this.props.authToken));
     this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken));
   }
+  componentWillUnmount(){
+    this.props.dispatch(changingSingleItemView());
+  }
   handleBackButtonClicked(){
-    this.props.dispatch(changingSingleItemView(false));
+    this.props.dispatch(changingSingleItemView());
   }
   
   render(){
@@ -50,10 +53,10 @@ export class SingleRecipe extends React.Component {
         
        {(this.props.loggedIn && this.props.apiRecipes.length === 0) ?
          <Link to="/myRecipes">
-           <button className="singleRecipeBackButton" onClick={() => this.handleBackButtonClicked()}>Back</button>
+           <button className="singleRecipeBackButton">Back</button>
          </Link> 
        : <Link to="/searchedRecipes">
-          <button className="singleRecipeBackButton" onClick={()=> this.handleBackButtonClicked()}>Back</button>
+          <button className="singleRecipeBackButton">Back</button>
          </Link> }        
       </div>
     )

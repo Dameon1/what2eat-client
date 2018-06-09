@@ -38,8 +38,5 @@ export class Container extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({
-  loggedIn: state.authReducer.loggedIn
-})
 
-export default withRouter(connect(mapStateToProps)(Container));
+export default withRouter(connect()(Container));

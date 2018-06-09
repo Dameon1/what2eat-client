@@ -1,12 +1,12 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import  MultipleRecipesDisplay  from './multipleRecipes';
-import { userIsSearching  } from '../../actions/userActions';
+import { userIsNotSearching  } from '../../actions/userActions';
 
 export class RecipeDisplay extends React.Component{
 
   componentWillMount(){
-      this.props.dispatch(userIsSearching());
+      this.props.dispatch(userIsNotSearching());
     }
 
   render(){

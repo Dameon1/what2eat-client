@@ -17,7 +17,7 @@ const initialState = {
     error: null,
     returningResults:false,
     viewingSingleItem:false,
-    isSearching:true,
+    isSearching:false,
     recipes:[]
    
     };
@@ -26,142 +26,118 @@ export function recipeReducer(state=initialState, action) {
   switch (action.type) {
     case FETCH_RECIPES_FROM_DATABASE_REQUEST: 
          return Object.assign({}, state, {
-            ...state,
-            loading:action.loading
+            loading:true
             })
     case FETCH_RECIPES_FROM_DATABASE_SUCCESS: 
           return Object.assign({}, state, {
-              ...state,
-              recipes: [...action.recipes],
-              loading:action.loading,
-             
-              })
+            recipes: [...action.recipes],
+            loading:false,
+            })
     case FETCH_RECIPES_FROM_DATABASE_ERROR: 
           return Object.assign({}, state, {
-              ...state,
-              error:action.error,
-              loading:action.loading
-              })
+            error:action.error,
+            loading:false
+            })
     case POST_RECIPE_TO_DATABASE_REQUEST: 
           return Object.assign({}, state, {
-              ...state,
-              loading:action.loading
-              })
+            loading:true
+            })
     case POST_RECIPE_TO_DATABASE_SUCCESS: 
           return Object.assign({}, state, {
-              ...state,
-              loading:action.loading,
-              //recipes:[...this.state,action.recipe]
-              })
+            loading:false,
+            })
     case POST_RECIPE_TO_DATABASE_ERROR: 
-            return Object.assign({}, state, {
-              ...state,
-              error:action.error,
-              loading:action.loading
-              })
+          return Object.assign({}, state, {
+            error:action.error,
+            loading:false
+            })
     case REMOVE_RECIPE_FROM_DATABASE_REQUEST: 
-            return Object.assign({}, state, {
-              ...state,
-              loading:action.loading
-              })
+          return Object.assign({}, state, {
+            loading:true
+            })
     case REMOVE_RECIPE_FROM_DATABASE_SUCCESS: 
-            return Object.assign({}, state, {
-              ...state,
-              recipes: [...state.recipes,action.recipe],
-              loading:action.loading
-              })
-    case REMOVE_RECIPE_FROM_DATABASE_ERROR: 
-            return Object.assign({}, state, {
-              ...state,
-              error:action.error,
-              loading:action.loading
-              })
-    case FETCH_RECIPES_FROM_SPOONACULAR_REQUEST: 
-            return Object.assign({}, state, {
-              ...state,
-              loading:action.loading
-              })
-    case FETCH_RECIPES_FROM_SPOONACULAR_SUCCESS: 
-            return Object.assign({}, state, {
-              ...state,
-              apiRecipes: [...action.recipes],
-              loading:action.loading
-              })
-    case FETCH_RECIPES_FROM_SPOONACULAR_ERROR: 
-            return Object.assign({}, state, {
-              ...state,
-              error:action.error,
-              loading:action.loading
-              })
-    case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST: 
-            return Object.assign({}, state, {
-              ...state,
-              loading:action.loading
-              })
-    case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS: 
-            return Object.assign({}, state, {
-              ...state,
-              currentApiRecipeDisplayed: [action.recipe],
-              loading:action.loading,
-              viewingSingleItem:action.viewingSingleItem
-              })
-    case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR: 
-            return Object.assign({}, state, {
-              ...state,
-              error:action.error,
-              loading:action.loading
-              })
-    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST: 
-              return Object.assign({}, state, {
-                ...state,
-                loading:action.loading
-                })
-    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS: 
-              return Object.assign({}, state, {
-                ...state,
-                userRecipes: [...action.recipes],
-                loading:action.loading
-                })
-    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR: 
-              return Object.assign({}, state, {
-                ...state,
-                error:action.error,
-                loading:action.loading
-                })
-
-    case CHANGING_SINGLE_ITEM_VIEW:
-            return Object.assign({},state,{
-             ...state,
-             viewingSingleItem:action.viewingSingleItem
-           })
-    case USER_IS_NOT_SEARCHING:
-           return Object.assign({},state,{
+          return Object.assign({}, state, {
             ...state,
+            recipes: [...state.recipes,action.recipe],
+            loading:false
+            })
+    case REMOVE_RECIPE_FROM_DATABASE_ERROR: 
+          return Object.assign({}, state, {
+            error:action.error,
+            loading:false
+            })
+    case FETCH_RECIPES_FROM_SPOONACULAR_REQUEST: 
+          return Object.assign({}, state, {
+            loading:true
+            })
+    case FETCH_RECIPES_FROM_SPOONACULAR_SUCCESS: 
+          return Object.assign({}, state, {
+            apiRecipes: [...action.recipes],
+            loading:false
+            })
+    case FETCH_RECIPES_FROM_SPOONACULAR_ERROR: 
+          return Object.assign({}, state, {
+            error:action.error,
+            loading:false
+            })
+    case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST: 
+          return Object.assign({}, state, {
+            loading:true
+            })
+    case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS: 
+          return Object.assign({}, state, {
+            currentApiRecipeDisplayed: [action.recipe],
+            loading:false,
+            viewingSingleItem:action.viewingSingleItem
+            })
+    case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR: 
+          return Object.assign({}, state, {
+            error:action.error,
+            loading:false
+            })
+    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST: 
+          return Object.assign({}, state, {
+            loading:true
+            })
+    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS: 
+          return Object.assign({}, state, {
+            ...state,
+            userRecipes: [...action.recipes],
+            loading:false
+            })
+    case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR: 
+          return Object.assign({}, state, {
+            error:action.error,
+            loading:false
+            })
+    case CHANGING_SINGLE_ITEM_VIEW:
+          return Object.assign({},state,{
+            viewingSingleItem:false,
+            currentApiRecipeDisplayed:[]
+            })
+    case USER_IS_NOT_SEARCHING:
+          return Object.assign({},state,{
             isSearching:false
-          })
+            })
     case USER_IS_SEARCHING:
           return Object.assign({},state,{
-           ...state,
-           isSearching:true,
-           
-         })
+            isSearching:true,
+            })
     case USER_IS_SIGNING_IN:
-    return Object.assign({},state,{
-      ...state,
-      userRecipes:[],
-      apiRecipes:[],
-      currentApiRecipeDisplayed:[],
-      viewingSingleItem:false
-         })
+          return Object.assign({},state,{
+            userRecipes:[],
+            apiRecipes:[],
+            currentApiRecipeDisplayed:[],
+            viewingSingleItem:false
+            })
     case USER_IS_SIGNING_OUT:
-    return Object.assign({},state,{
-      ...state,
-      recipes:[],
-      userRecipes:[],
-      apiRecipes:[],
-      currentApiRecipeDisplayed:[],
-      viewingSingleItem:false
-        })
+          return Object.assign({},state,{
+            recipes:[],
+            userRecipes:[],
+            apiRecipes:[],
+            currentApiRecipeDisplayed:[],
+            viewingSingleItem:false
+            })
     default:
       return state
   }

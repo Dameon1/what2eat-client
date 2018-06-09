@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 import '../styles/header.css';
 import {signUserOut} from '../../actions/auth';
 import {connect} from 'react-redux';
-import { userIsSearching , signingUserOut } from "../../actions/userActions";
+import {  signingUserOut } from "../../actions/userActions";
 
 
 
@@ -19,7 +19,9 @@ export class Header extends React.Component {
     if (!this.props.loggedIn) {
         return (
           <div className = 'header'>
-            <h1 className="headerText">what2Eat</h1>
+            <h1 className="headerText">
+              what2Eat
+            </h1>
             <div className="navLinks">
             <Link to="/loginPage">
               <button className="navLinkButtons">Login</button>
@@ -31,7 +33,7 @@ export class Header extends React.Component {
               <button className="navLinkButtons" >Dashboard</button>
             </Link>
             <Link to="/">
-              <button className="navLinkButtons" >Home</button>
+              <button className="navLinkButtons">Home</button>
             </Link>
             </div>
           </div>
@@ -39,15 +41,15 @@ export class Header extends React.Component {
      else { 
       return (
           <div className = 'header'>
-            <div className='logo'>
+            <h1 className="headerText">
               what2Eat
-            </div>
+            </h1>
             <div className="navLinks">
             <Link to="/dashboard">
-              <button className="navLinkButtons" onClick={()=>{this.props.dispatch(userIsSearching(true))}}>Dashboard</button>
+              <button className="navLinkButtons">Dashboard</button>
             </Link>
             <Link to="/myRecipes">
-              <button className="navLinkButtons" >My recipes</button>
+              <button className="navLinkButtons">My recipes</button>
             </Link> 
             <Link to="/">
               <button className="navLinkButtons" onClick={()=>{this.handleSignOut()}}>Sign Out</button>

@@ -2,15 +2,18 @@ import React from 'react';
 import {connect} from 'react-redux';
 import UserDisplayedRecipes from '../display/userDisplayedRecipes';
 import {getUserRecipesInBulkFromSpoonacular} from '../../actions/userActions';
-
+import {Redirect} from 'react-router-dom';
 export class UserSavedRecipes extends React.Component {
 
   componentWillMount(){
-    this.props.dispatch(getUserRecipesInBulkFromSpoonacular(this.props.recipes))
+    if(this.props.loggedIn){
+      this.props.dispatch(getUserRecipesInBulkFromSpoonacular(this.props.recipes))
+    }
+    
   }
 
   render(){ 
- 
+    if(!this.props.loggedIn){ return <Redirect to="/"/>}
     return (
       <div className='recipesDisplayBox'>
         <ul>
@@ -28,6 +31,7 @@ export class UserSavedRecipes extends React.Component {
 const mapStateToProps = state => ({
   userRecipes: state.recipeReducer.userRecipes || [],
   recipes: state.recipeReducer.recipes || [],
+  loggedIn: state.authReducer.loggedIn
 })
 
 export default connect(mapStateToProps)(UserSavedRecipes);

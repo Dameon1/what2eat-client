@@ -3,6 +3,8 @@ import {connect} from 'react-redux';
 import RecipeSearchForm  from '../display/recipeSearchForm';
 import {fetchRecipeIdsFromDatabase,userIsSigningIn} from '../../actions/userActions'
 import '../styles/dashboard.css';
+import {Redirect} from 'react-router-dom';
+
 export class Dashboard extends React.Component {
     
     componentWillMount(){
@@ -10,9 +12,13 @@ export class Dashboard extends React.Component {
           this.props.dispatch(userIsSigningIn())
           this.props.dispatch(fetchRecipeIdsFromDatabase(this.props.userId,this.props.authToken))
         } 
-    }       
+    } 
+    // componentDidMount(){
+    //     this.props.dispatch(userIsSearching());
+    // }      
 
     render() {
+        if(this.props.isSearching){ return <Redirect to='/searchedRecipes' />}
         return (
           <div className="dashboard">
             <div className="">
@@ -28,9 +34,9 @@ const mapStateToProps = state => {
     return {
       userId: state.authReducer.currentUser.id || "",
       authToken:state.authReducer.authToken,
-      recipes:state.recipeReducer.recipes,
       loggedIn:state.authReducer.loggedIn,
-      username:state.authReducer.currentUser.username 
+      username:state.authReducer.currentUser.username,
+      isSearching:state.recipeReducer.isSearching  
     }  
 };
 

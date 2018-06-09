@@ -3,8 +3,7 @@ import React from 'react';
 import Checkbox from './checkboxes';
 import {connect} from 'react-redux';
 import {fetchRecipesFromSpoonacular} from '../../actions/spoonacularActions';
-import {Redirect} from 'react-router-dom';
-import { userIsNotSearching } from "../../actions/userActions";
+import { userIsSearching } from "../../actions/userActions";
 
 
 export class RecipeSearchForm extends React.Component {
@@ -36,7 +35,7 @@ export class RecipeSearchForm extends React.Component {
       queryString += checkbox+','
     }   
     let recipeString = queryString.slice(0,-1);
-    this.props.dispatch(userIsNotSearching());
+    this.props.dispatch(userIsSearching());
     this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
   }
     
@@ -68,7 +67,7 @@ export class RecipeSearchForm extends React.Component {
   }
 
   render() {
-    if(!this.props.isSearching){ return <Redirect to='/searchedRecipes' />}
+    
           
     return (
       <div>
@@ -79,7 +78,7 @@ export class RecipeSearchForm extends React.Component {
         </form>
         <form onSubmit={this.handleFormSubmit} className="recipeSearchForm">
           {this.createCheckboxes()}
-          <button className="recipeSearchButton" onClick={this.handleFormSubmit} type="submit">Search</button>
+          <button className="recipeSearchButton" type="submit">Search</button>
         </form>  
       </div>
     );
