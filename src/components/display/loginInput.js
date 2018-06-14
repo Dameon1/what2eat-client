@@ -30,7 +30,7 @@ export default class Input extends React.Component {
             { warning }
             <input className="text-input"
                    id={ this.props.input.name }
-                   placeholder={ this.props.input.name }
+                   placeholder={` ${this.props.input.name}`}
                    type={ this.props.type }
                    ref={ input => (this.input = input) }
             { ...this.props.input }

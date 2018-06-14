@@ -77,7 +77,7 @@ export class RecipeSearchForm extends React.Component {
           </label>
           <input className="addIngredientInputField" 
                  type="text" 
-                 placeholder="Add Ingredient" 
+                 placeholder=" Add Ingredient" 
                  name="addIngredient" 
                  id="addIngredient" 
                  ref={ input => (this.input = input) }

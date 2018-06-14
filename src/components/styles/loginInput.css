@@ -1,9 +1,9 @@
 
 .text-input {
   width:200px;
-  border-radius:2px;
+  border-radius:5px;
   height:25px;
-  background-color:#f5f5f5;
+  background-color:#f7f7f7;
 }
 .signupForm {
   margin:10px;
@@ -15,4 +15,5 @@
 .signUpButton,
 .signUpInput {
   margin:50px;
+  border-radius:5px;
 }
