@@ -1,27 +1,33 @@
 
 import React from 'react';
-import {connect} from 'react-redux';
-import  MultipleRecipesDisplay  from '../display/multipleRecipes';
+import  MultipleRecipesDisplay  from '../display/MultipleRecipesDisplay';
 import { userIsNotSearching  } from '../../actions/userActions';
+import { connect } from 'react-redux';
+import Spinner from 'react-spinkit';
 
-export class Content extends React.Component{
+export class Content extends React.Component {
 
-  componentWillMount(){
+  componentWillMount() {
       this.props.dispatch(userIsNotSearching());
-    }
+  };
 
-  render(){
+  render() {
+    if (this.props.loading) {
+      return <Spinner spinnername="circle" fadeIn='none' />;
+  }
     return (
       <div className='recipesDisplayBox'> 
         {this.props.apiRecipes.map((recipe,index) => (
-          <MultipleRecipesDisplay {...recipe} key={index} index={index}/>
+          <MultipleRecipesDisplay { ...recipe } key={ index } index={ index }/>
         ))}
       </div>
-    )} 
-}
+    )
+  }; 
+};
     
 const mapStateToProps = state => ({
-  apiRecipes:state.recipeReducer.apiRecipes || [],
+  apiRecipes: state.recipeReducer.apiRecipes || [],
+  loading: state.recipeReducer.loading,
 });
 
 export default connect(mapStateToProps)(Content);

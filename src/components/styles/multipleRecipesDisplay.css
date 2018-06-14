@@ -2,16 +2,22 @@
 .multipleRecipeImage {
   max-width:100%;
  }
+
  .getRecipeButton {
   width: 100%;
-  font-size: 3vw;
+  font-size: 18px;
 }
 
 .recipeImageBox {
   text-align: center;
   max-width: 45%;
   display: inline-block;
-  margin: 10px auto;
+  margin: 10px  auto;
+  font-size: 22px;
   margin-left: 10px;
-  font-size: 3.5vw;
+}
+
+.multipleRecipeTitle {
+  width:100%;
+  font-stretch: condensed;
 }

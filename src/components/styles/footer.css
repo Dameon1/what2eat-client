@@ -7,11 +7,13 @@
   right:0;
   bottom:0;
 }
-
 .footerText {
   margin-top:10px;
+ 
 }
- .footerLink {
-    color:white;
-    text-decoration:none;
+
+.footerLink {
+	color: white;
+  text-decoration: none;
+	cursor: pointer;
 }

@@ -64,27 +64,27 @@ export const fetchRecipesFromSpoonacular = (queryString) => (dispatch) =>  {
               redirect: 'follow', 
               referrer: 'no-referrer', 
               })
-        .then(response => response.json())
-        .then(response => dispatch(fetchRecipesFromSpoonacularSuccess(response))) 
-        .catch(error => dispatch(fetchRecipesFromSpoonacularError(error)));
-    }
+    .then(response => response.json())
+    .then(response => dispatch(fetchRecipesFromSpoonacularSuccess(response))) 
+    .catch(error => dispatch(fetchRecipesFromSpoonacularError(error)));
+};
   
 export const fetchRecipesFromSpoonacularById = (id) => (dispatch) => {
-      dispatch(fetchSingleRecipeFromFromSpoonacularRequest());
-      return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`, {
-              cache: 'no-cache', 
-              credentials: 'same-origin',
-              headers: { 'X-Mashape-Key': 'KIpcxoopqbmshgBnI6jbDfqaTFdep1CtFMajsnNSg0vp2OPTmY',
-                        'content-type': 'application/json' },
-              method: 'GET', 
-              mode: 'cors', 
-              redirect: 'follow', 
-              referrer: 'no-referrer', 
-              })
-        .then(results => results.json() )        
-        .then(recipe =>  dispatch(fetchSingleRecipeFromSpoonacularSuccess(recipe)))
-        .catch(error => dispatch(fetchSingleRecipeFromSpoonacularError(error)));
-    }
+    dispatch(fetchSingleRecipeFromFromSpoonacularRequest());
+    return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/${id}/information`, {
+            cache: 'no-cache', 
+            credentials: 'same-origin',
+            headers: { 'X-Mashape-Key': 'KIpcxoopqbmshgBnI6jbDfqaTFdep1CtFMajsnNSg0vp2OPTmY',
+                    'content-type': 'application/json' },
+            method: 'GET', 
+            mode: 'cors', 
+            redirect: 'follow', 
+            referrer: 'no-referrer', 
+            })
+    .then(results => results.json() )        
+    .then(recipe =>  dispatch(fetchSingleRecipeFromSpoonacularSuccess(recipe)))
+    .catch(error => dispatch(fetchSingleRecipeFromSpoonacularError(error)));
+};
 
 export const fetchRecipesFromSpoonacularInBulk = (idString) => (dispatch) => {
     dispatch(fetchRecipesInbulkFromSpoonacularRequest());
@@ -98,7 +98,7 @@ export const fetchRecipesFromSpoonacularInBulk = (idString) => (dispatch) => {
               redirect: 'follow', 
               referrer: 'no-referrer', 
               })
-        .then(results => results.json())        
-        .then(recipes => dispatch(fetchRecipesInbulkFromSpoonacularSuccess(recipes)))
-        .catch(error => dispatch(fetchRecipesInbulkFromSpoonacularError(error)));
-    }
+    .then(results => results.json())        
+    .then(recipes => dispatch(fetchRecipesInbulkFromSpoonacularSuccess(recipes)))
+    .catch(error => dispatch(fetchRecipesInbulkFromSpoonacularError(error)));
+};

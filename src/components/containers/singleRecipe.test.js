@@ -1,23 +1,23 @@
-
 import React from 'react';
 import { shallow } from 'enzyme';
-import  { Content }  from './Content';
+import  { SingleRecipe }  from './SingleRecipe';
 
-describe('<Content />', () => {
+describe('<SingleRecipe />', () => {
        
      it('Renders without crashing', () => {
         const configs = {
             default: true,
             label: 'My Label',
             element: 'myElement',
-            apiRecipes:[12232,1221]
+            apiRecipes:[12232,1221],
+            // currentItem.analyzedInstructions[0].steps
           }
         const dispatch = jest.fn();
 
         const props = {
-          apiRecipes:configs.apiRecipes,
+          recipes:configs.recipes,
           dispatch,
         }
-         shallow(<Content {...props}/>);
+         shallow(<SingleRecipe {...props}/>);
      });
 });

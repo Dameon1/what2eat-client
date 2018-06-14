@@ -2,7 +2,6 @@
 .checkbox {
   display: inline-block;
   width:50%;
-}
-.recipeSearchButton {
-  margin:5px auto;
-}
+  padding:2px;
+  font-size:22px;
+ }

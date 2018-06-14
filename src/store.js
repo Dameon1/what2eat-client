@@ -1,8 +1,11 @@
-import {createStore, applyMiddleware, combineReducers} from 'redux';
-import {reducer as formReducer} from 'redux-form';
-import {authReducer} from './reducers/authReducer';
+
+import { createStore, 
+        applyMiddleware, 
+        combineReducers} from 'redux';
+import { reducer as formReducer } from 'redux-form';
+import { authReducer } from './reducers/authReducer';
+import { recipeReducer } from './reducers/userReducer';
 import thunk from 'redux-thunk';
-import {recipeReducer} from './reducers/userReducer';
 
 export default createStore(
    combineReducers({

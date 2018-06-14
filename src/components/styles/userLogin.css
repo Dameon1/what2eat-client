@@ -1,15 +1,40 @@
-.login-form {
+/* .login-form {
   border: solid #4aaaa5 2px;
   margin: 120px auto;
   width: 70%;
-  font-size: 5vw;
+  font-size: 24px;
   padding: 10px;
   background-color: white;
   border-radius: 5px;
-}
+} */
 
 
-.inputField {
-  margin-top:5px;
-}
  
+.userSignInHeader {
+  margin-bottom: 5px;
+  font-size:26px;
+  text-align: center;
+}
+.loginPage {
+  margin: 75px auto;
+  width: 250px;
+  display:block;
+}
+ .login-form {
+  border: solid #4aaaa5 2px;
+  font-size: 24px;
+  background-color: white;
+  border-radius: 5px;
+  padding:15px;
+} 
+.signInLabel {
+  margin:50px;
+  padding:2px;
+}
+.form-input {
+  background-color:#f7f7f7;
+}
+.signInButton {
+  margin-top:10px;
+  width:200px;
+}

@@ -24,105 +24,127 @@ const initialState = {
     
 export function recipeReducer(state=initialState, action) {
   switch (action.type) {
+
     case FETCH_RECIPES_FROM_DATABASE_REQUEST: 
          return Object.assign({}, state, {
             loading:true
             })
+
     case FETCH_RECIPES_FROM_DATABASE_SUCCESS: 
           return Object.assign({}, state, {
             recipes: [...action.recipes],
             loading:false,
             })
+
     case FETCH_RECIPES_FROM_DATABASE_ERROR: 
           return Object.assign({}, state, {
             error:action.error,
             loading:false
             })
+
     case POST_RECIPE_TO_DATABASE_REQUEST: 
           return Object.assign({}, state, {
             loading:true
             })
+
     case POST_RECIPE_TO_DATABASE_SUCCESS: 
           return Object.assign({}, state, {
             loading:false,
             })
+
     case POST_RECIPE_TO_DATABASE_ERROR: 
           return Object.assign({}, state, {
             error:action.error,
             loading:false
             })
+
     case REMOVE_RECIPE_FROM_DATABASE_REQUEST: 
           return Object.assign({}, state, {
             loading:true
             })
+
     case REMOVE_RECIPE_FROM_DATABASE_SUCCESS: 
           return Object.assign({}, state, {
             ...state,
             recipes: [...state.recipes,action.recipe],
             loading:false
             })
+
     case REMOVE_RECIPE_FROM_DATABASE_ERROR: 
           return Object.assign({}, state, {
             error:action.error,
             loading:false
             })
+
     case FETCH_RECIPES_FROM_SPOONACULAR_REQUEST: 
           return Object.assign({}, state, {
             loading:true
             })
+
     case FETCH_RECIPES_FROM_SPOONACULAR_SUCCESS: 
           return Object.assign({}, state, {
             apiRecipes: [...action.recipes],
             loading:false
             })
+
     case FETCH_RECIPES_FROM_SPOONACULAR_ERROR: 
           return Object.assign({}, state, {
             error:action.error,
             loading:false
             })
+
     case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_REQUEST: 
           return Object.assign({}, state, {
             loading:true
             })
+
     case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_SUCCESS: 
           return Object.assign({}, state, {
             currentApiRecipeDisplayed: [action.recipe],
             loading:false,
             viewingSingleItem:action.viewingSingleItem
             })
+
     case FETCH_SINGLE_RECIPE_FROM_SPOONACULAR_ERROR: 
           return Object.assign({}, state, {
             error:action.error,
             loading:false
             })
+
     case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_REQUEST: 
           return Object.assign({}, state, {
             loading:true
             })
+
     case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_SUCCESS: 
           return Object.assign({}, state, {
             ...state,
             userRecipes: [...action.recipes],
             loading:false
             })
+
     case FETCH_RECIPES_INBULK_FROM_SPOONACULAR_ERROR: 
           return Object.assign({}, state, {
             error:action.error,
             loading:false
             })
+
     case CHANGING_SINGLE_ITEM_VIEW:
           return Object.assign({},state,{
             viewingSingleItem:false,
             currentApiRecipeDisplayed:[]
             })
+
     case USER_IS_NOT_SEARCHING:
           return Object.assign({},state,{
             isSearching:false
             })
+
     case USER_IS_SEARCHING:
           return Object.assign({},state,{
             isSearching:true,
             })
+
     case USER_IS_SIGNING_IN:
           return Object.assign({},state,{
             userRecipes:[],
@@ -130,6 +152,7 @@ export function recipeReducer(state=initialState, action) {
             currentApiRecipeDisplayed:[],
             viewingSingleItem:false
             })
+
     case USER_IS_SIGNING_OUT:
           return Object.assign({},state,{
             recipes:[],
@@ -138,11 +161,8 @@ export function recipeReducer(state=initialState, action) {
             currentApiRecipeDisplayed:[],
             viewingSingleItem:false
             })
+
     default:
       return state
   }
-}
-
-
-
-
+};

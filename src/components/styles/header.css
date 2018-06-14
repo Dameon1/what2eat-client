@@ -4,7 +4,7 @@
   border-width:7px;
   text-align:center;
   border-color:#454545;
-  background-color:#CAE8E8;;
+  background-color:#CAE8E8;
   left:0;
   right:0;
   top:0;
@@ -12,17 +12,19 @@
 
 .headerText {
   color:#454545;
-  padding: 10px;
+  padding: 5px;
   display:inline-block;
-  font-size:5.5vh;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size:40px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin:10px;
 }
 
 .navLinkButtons {
   border-radius:2px;
-  margin-right:2px;
+  margin: 5px;
   display: inline-block;
-  
+  cursor: pointer;
+  height : 25px;
 }
 
 

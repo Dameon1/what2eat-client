@@ -9,14 +9,15 @@
 }
 .landingPageHeader {
   text-align: center;
-  font-size:8vw;
-  font-family: 'Times New Roman', Times, serif;
-  /* margin:25px ; */
+  font-size:150%;
+  font-family: Arial, Helvetica, sans-serif;
+  padding-top:10px;
   /* display:flex; */
 }
 
 .landingPageBox > .smallPrint {
   text-align: center;
+  font-size: 80%;
   margin-top:5px;
   color:#454545;
   font-family: Arial, Helvetica, sans-serif;
@@ -32,5 +33,6 @@
   margin: 10px auto;
   border-radius:2px;
   color:#454545;
-  
-}
+  width:100px;
+  height:30px;
+ }

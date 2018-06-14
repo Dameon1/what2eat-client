@@ -1,13 +1,11 @@
 
-
  .getRecipeButton {
   width: 100%;
-  
 }
 
 .recipeImageBox {
   max-width: 100%;
   margin: auto;
-  font-size: 3.5vw;
+  font-size:22px;
   border:2px solid black;
 }

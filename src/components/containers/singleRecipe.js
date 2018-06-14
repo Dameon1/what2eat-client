@@ -1,33 +1,47 @@
+
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import '../styles/singleRecipe.css';
-import {changingSingleItemView,postRecipeToDatabase,updateStateWithDatabaseResults, removeRecipeFromDatabase} from '../../actions/userActions';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import Spinner from 'react-spinkit';
+import { 
+  changingSingleItemView, 
+  postRecipeToDatabase, 
+  updateStateWithDatabaseResults, 
+  removeRecipeFromDatabase, 
+  } from '../../actions/userActions';
+
 
 export class SingleRecipe extends React.Component {
 
   handleNewRecipeSubmit(recipeId){
-      this.props.dispatch(postRecipeToDatabase(recipeId,this.props.userId,this.props.authToken));
-      this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken));      
-   }
+      this.props.dispatch(postRecipeToDatabase(recipeId,this.props.userId,this.props.authToken))
+      .then(() =>  this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken)));      
+  };
+
   handleRemoveRecipeSubmit(recipeId){
-    this.props.dispatch(removeRecipeFromDatabase(recipeId,this.props.userId,this.props.authToken));
-    this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken));
-  }
+    this.props.dispatch(removeRecipeFromDatabase(recipeId,this.props.userId,this.props.authToken))
+    .then(() => this.props.dispatch(updateStateWithDatabaseResults(this.props.userId,this.props.authToken)));
+  };
+
   componentWillUnmount(){
     this.props.dispatch(changingSingleItemView());
-  }
+  };
+
   handleBackButtonClicked(){
     this.props.dispatch(changingSingleItemView());
-  }
+  };
   
-  render(){
+  render() {
+    if (this.props.loading) {
+      return <Spinner spinnername="circle" fadeIn='none' />;
+    }
     const arrayOfRecipesFromSavedRecipes = this.props.recipes.map((recipe)=>recipe.recipeId);
-    if(this.props.viewingSingleItem){
+    if(this.props.viewingSingleItem) {
     let instructions = "";
     let currentItem = this.props.currentApiRecipeDisplayed[0];
-    if (!currentItem){return}
-    if (currentItem.analyzedInstructions[0] ) {
+    if (!currentItem) { return }
+    if (currentItem.analyzedInstructions[0]) {
         instructions = currentItem.analyzedInstructions[0].steps.map((item,index) => {
           return (        
             <div key={index}>
@@ -36,22 +50,26 @@ export class SingleRecipe extends React.Component {
             )
           });
         }
-    if(instructions === undefined) {return}
+    if(instructions === undefined) { return }
    
     return (
       <div className='recipeOverview'>
-       <img className="sigleRecipeImage" src={currentItem.image} alt={currentItem.title} />
-       <div>
-        {instructions}
-        <a href={currentItem.sourceUrl} target="blank" className="recipeLink">Full Recipe</a>
+        <h2 className='singleRecipeDisplayTitleText'>{ currentItem.title }</h2>
+        <img className="sigleRecipeImage" 
+            src={ currentItem.image } 
+            alt={ currentItem.title } 
+            />
+        <div>         
+        { instructions }
+        <a href={ currentItem.sourceUrl } target="blank" className="recipeLink">Full Recipe</a>
        </div>
-       {(this.props.loggedIn && !arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
-          <button onClick={()=>this.handleNewRecipeSubmit(currentItem.id)}>Save</button> 
+       { (this.props.loggedIn && !arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
+          <button onClick={ () => this.handleNewRecipeSubmit(currentItem.id) } >Save</button> 
            : (this.props.loggedIn && arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
-              <button onClick={()=>this.handleRemoveRecipeSubmit(currentItem.id)}>UnSave</button> 
+              <button onClick={ () => this.handleRemoveRecipeSubmit(currentItem.id)} >UnSave</button> 
                : null}
         
-       {(this.props.loggedIn && this.props.apiRecipes.length === 0) ?
+       { (this.props.loggedIn && this.props.apiRecipes.length === 0) ?
          <Link to="/myRecipes">
            <button className="singleRecipeBackButton">Back</button>
          </Link> 
@@ -60,10 +78,12 @@ export class SingleRecipe extends React.Component {
          </Link> }        
       </div>
     )
-  }
+    }
   return null
- }
-}
+  };
+
+};
+
 const mapStateToProps = state => ({
   currentApiRecipeDisplayed:state.recipeReducer.currentApiRecipeDisplayed,
   viewingSingleItem:state.recipeReducer.viewingSingleItem,
@@ -71,7 +91,8 @@ const mapStateToProps = state => ({
   userId: state.authReducer.currentUser.id || "",
   authToken:state.authReducer.authToken,
   recipes:state.recipeReducer.recipes || [],
-  apiRecipes:state.recipeReducer.apiRecipes
-})
+  apiRecipes:state.recipeReducer.apiRecipes,
+  loading: state.recipeReducer.loading,
+});
 
 export default connect(mapStateToProps)(SingleRecipe);

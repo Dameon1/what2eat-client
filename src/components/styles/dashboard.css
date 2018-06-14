@@ -2,7 +2,9 @@
 .dashboardHeading {
  text-align: center;
  margin-top:10px;
+ font-family: Arial, Helvetica, sans-serif;
+ font-size: 26px;
 }
 .userNameTextForDashboardHeading{
-  font-weight:600; 
+ font-weight:600; 
 }

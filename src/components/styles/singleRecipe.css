@@ -2,21 +2,27 @@
   margin:20px auto;
   width:75%;
 }
-
 .recipeLink {
-  color:#454545
+  color:#454545;
+  font-size: 120%;
+  font-weight: 500;
 }
 .singleRecipeBackButton {
   margin:10px auto;
   width:80%;
-  display:inline-block;
+  display:block;
   border-radius:2px;
+  cursor: pointer;
 }
 .singleRecipeUserSaveButton {
   margin:2px;
   border-radius:2px;
+  cursor: pointer;
 }
-
 .sigleRecipeImage {
   max-width:100%;
- }
+}
+.singleRecipeDisplayTitleText {
+  font-size: 22px;
+  text-align: center;
+}
