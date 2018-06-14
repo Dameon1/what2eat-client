@@ -10,12 +10,14 @@
 
 .recipeImageBox {
   text-align: center;
-  max-width: 45%;
+  max-width: 90%;
   display: inline-block;
   margin: 10px  auto;
   font-size: 22px;
   margin-left: 10px;
+  background-color:#e6eff079;
 }
+
 
 .multipleRecipeTitle {
   width:100%;

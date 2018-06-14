@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 export function MultipleRecipesDisplay (props) {
  
   return (
-    <div className="recipeImageBox" 
+    <div className=" recipeImageBox" 
          key={ props.index } 
          value={ props.id } >
       <h2 className="multipleRecipeTitle">{props.title}</h2>

@@ -40,21 +40,21 @@ export class SignUpForm extends React.Component {
             <h2 className="userSignInHeader">Register</h2> 
             <form className="login-form"
                   onSubmit={ this.props.handleSubmit(values => this.onSubmit(values)) } >
-              <label htmlFor="username">Username</label>
+              <label htmlFor="username" className='signInLabel'>Username</label>
               <Field                    
                 component={ Input }
                 type="text"
                 name="username"
                 validate={ [required, nonEmpty, isTrimmed] }
                 />
-              <label htmlFor="password">Password</label>
+              <label htmlFor="password" className='signInLabel'>Password</label>
               <Field
                 component={ Input }
                 type="password"
                 name="password"
                 validate={ [required, passwordLength, isTrimmed] }
                 />
-              <label htmlFor="Confirm password">Confirm password</label>
+              <label htmlFor="Confirm password" className='signUpPasswordConfirmLabel'>Confirm password</label>
               <Field                  
                 component={ Input }
                 type="password"

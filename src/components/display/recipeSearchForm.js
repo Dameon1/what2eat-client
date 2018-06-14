@@ -39,14 +39,15 @@ export class RecipeSearchForm extends React.Component {
     this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
   }
     
-  createCheckbox = label => (
+  createCheckbox = label => {
+       return (
     <Checkbox 
       label= { label }
       handleCheckboxChange= { this.toggleCheckbox }
       key= { label }
     />
   )
-
+  }
   createCheckboxes = () => (
     this.state.items.map(this.createCheckbox)
    )

@@ -31,3 +31,7 @@
   color:white;
   height:35px;
 }
+.signUpPasswordConfirmLabel {
+  padding:2px;
+  margin: 10px;
+}
