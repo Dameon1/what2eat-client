@@ -5,3 +5,6 @@
   padding:2px;
   font-size:22px;
  }
+.checkbox:hover {
+  border:dotted #454545 1px;
+}

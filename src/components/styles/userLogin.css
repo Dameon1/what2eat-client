@@ -35,3 +35,7 @@
   padding:2px;
   margin: 10px;
 }
+.signInButton:hover {
+  color:#8FCFDE;
+  background-color:#454545;
+}

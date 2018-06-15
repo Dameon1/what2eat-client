@@ -1,25 +1,28 @@
-
 .multipleRecipeImage {
   max-width:100%;
  }
-
  .getRecipeButton {
   width: 100%;
   font-size: 18px;
+  background-color:#8FCFDE;
+  color:#454545;
+  border-radius:5px;
 }
-
 .recipeImageBox {
   text-align: center;
   max-width: 90%;
-  display: inline-block;
+  display:flex;
+  flex-direction:column;
+  justify-content: space-between;
   margin: 10px  auto;
   font-size: 22px;
-  margin-left: 10px;
-  background-color:#e6eff079;
 }
-
-
 .multipleRecipeTitle {
   width:100%;
   font-stretch: condensed;
+  background-color: #D3D4D4;
+}
+.getRecipeButton:hover {
+  background-color:#454545;
+  color:#8FCFDE;
 }

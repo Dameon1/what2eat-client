@@ -38,7 +38,7 @@ export class SingleRecipe extends React.Component {
     }
     const arrayOfRecipesFromSavedRecipes = this.props.recipes.map((recipe)=>recipe.recipeId);
     if(this.props.viewingSingleItem) {
-    let instructions = "";
+    let instructions = "No instructions Available at this time";
     let currentItem = this.props.currentApiRecipeDisplayed[0];
     if (!currentItem) { return }
     if (currentItem.analyzedInstructions[0]) {
@@ -59,14 +59,15 @@ export class SingleRecipe extends React.Component {
             src={ currentItem.image } 
             alt={ currentItem.title } 
             />
-        <div>         
-        { instructions }
-        <a href={ currentItem.sourceUrl } target="blank" className="recipeLink">Full Recipe</a>
+        <div className='recipeInstructions'>         
+        { instructions }        
        </div>
+       
+       <a href={ currentItem.sourceUrl } target="blank" className="recipeLink">Full Recipe</a>
        { (this.props.loggedIn && !arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
-          <button onClick={ () => this.handleNewRecipeSubmit(currentItem.id) } >Save</button> 
+          <button onClick={ () => this.handleNewRecipeSubmit(currentItem.id) } className='singleRecipeUserSaveButton'>Save</button> 
            : (this.props.loggedIn && arrayOfRecipesFromSavedRecipes.includes(currentItem.id)) ?
-              <button onClick={ () => this.handleRemoveRecipeSubmit(currentItem.id)} >UnSave</button> 
+              <button onClick={ () => this.handleRemoveRecipeSubmit(currentItem.id)} className='singleRecipeUserSaveButton'>UnSave</button> 
                : null}
         
        { (this.props.loggedIn && this.props.apiRecipes.length === 0) ?

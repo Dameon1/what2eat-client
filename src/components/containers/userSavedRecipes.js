@@ -1,9 +1,10 @@
 
 import React from 'react';
-import UserDisplayedRecipes from '../display/userDisplayedRecipes';
+import UserDisplayedRecipes from '../display/UserDisplayedRecipes';
 import { getUserRecipesInBulkFromSpoonacular } from '../../actions/userActions';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
+import Spinner from 'react-spinkit';
 
 export class UserSavedRecipes extends React.Component {
 
@@ -15,15 +16,15 @@ export class UserSavedRecipes extends React.Component {
 
   render() { 
     if(!this.props.loggedIn){ return <Redirect to="/" />}
+    if (this.props.loading) {
+      return <Spinner spinnername="circle" fadeIn='none' />;
+    }
     return (
       <div className='recipesDisplayBox'>
-        <div>
-        { this.props.userRecipes.map((recipe,index) => {
-          return ( 
-           <UserDisplayedRecipes {...recipe} key={index} index={index}/>
-          )}
-        )}
-        </div>
+        { this.props.userRecipes.map((recipe,index) => ( 
+          <UserDisplayedRecipes {...recipe} key={index} index={index}/>
+          )
+        )}       
       </div>
       )
     }

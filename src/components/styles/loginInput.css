@@ -17,3 +17,7 @@
   margin:50px;
   border-radius:5px;
 }
+.signUpButton:hover {
+  color:#8FCFDE;
+  background-color:#454545
+}

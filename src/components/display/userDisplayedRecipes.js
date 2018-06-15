@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import "../styles/multipleRecipesDisplay.css";
 import { fetchRecipesFromSpoonacularById } from '../../actions/spoonacularActions';
 
-export function userDisplayedRecipes (props){
+export function UserDisplayedRecipes (props){
 
     return (
+       
       <div className="recipeImageBox" 
            key={ props.index }
            value={ props.id } >
@@ -23,8 +24,8 @@ export function userDisplayedRecipes (props){
           </button>
         </Link> 
       </div>
+      
     );
   };
   
-  export default connect()(userDisplayedRecipes);
-  
+  export default connect()(UserDisplayedRecipes);

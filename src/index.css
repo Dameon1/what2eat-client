@@ -57,24 +57,31 @@ body {
 	background-color: #D3D4D4;
 }
 
-@media only screen and (min-width: 360px) {
+@media only screen and (min-width: 460px) {
   
   .recipeImageBox {
    width:45%
   }
 }
 
-
- @media only screen and (min-width: 520px) {
+@media only screen and (min-width: 700px) {
   
   .recipeImageBox {
-    width: 31%;
+		width: 31%;
   }
 }
 
-@media only screen and (min-width: 1000px) {
+
+ @media only screen and (min-width: 1000px) {
   
   .recipeImageBox {
     width: 23%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  
+  .recipeImageBox {
+    width: 19%;
   }
 } 

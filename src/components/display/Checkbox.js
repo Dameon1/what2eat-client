@@ -20,7 +20,7 @@ export default class Checkbox extends React.Component {
     const { isChecked } = this.state;
 
     return (
-      <div className="checkbox">
+      <div className="checkbox" onClick={this.toggleCheckboxChange}>
         <label>
           <input
             type="checkbox"

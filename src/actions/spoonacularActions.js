@@ -54,7 +54,7 @@ export const fetchRecipesInbulkFromSpoonacularError = error => ({
 
 export const fetchRecipesFromSpoonacular = (queryString) => (dispatch) =>  {
     dispatch(fetchRecipesFromSpoonacularRequest());    
-    return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${queryString}&limitLicense=false&number=100&ranking=1`, {
+    return fetch(`https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=${queryString}&limitLicense=false&number=20&ranking=1`, {
               cache: 'no-cache', 
               credentials: 'same-origin',
               headers: { 'X-Mashape-Key': 'KIpcxoopqbmshgBnI6jbDfqaTFdep1CtFMajsnNSg0vp2OPTmY',

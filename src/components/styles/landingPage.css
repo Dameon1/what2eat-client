@@ -1,11 +1,13 @@
 
   
 .landingPageBox {
-  margin:40px;
+  margin:40px auto;
   background-color:#8FCFDE;
   height: 50vh;
   color:#454545;
   border-radius:5px;
+  max-width:600px;
+  width:80%;
 
 }
 .landingPageHeader {
@@ -37,3 +39,7 @@
   width:100px;
   height:30px;
  }
+.buttonStyle:hover {
+  background-color: #454545;
+  color:#D3D4D4;
+}
