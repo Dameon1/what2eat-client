@@ -1,12 +1,8 @@
 
-
-
 .recipesDisplayBox {
   display: flex;
   flex-wrap: wrap;
 }
-
-
 
 .recipeSearchForm {
   margin: 10px auto;

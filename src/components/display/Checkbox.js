@@ -25,8 +25,7 @@ export default class Checkbox extends React.Component {
           <input
             type="checkbox"
             value={label}
-            checked={isChecked}
-            onChange={this.toggleCheckboxChange}
+            checked={isChecked}           
           />
           {label}
         </label>

@@ -17,7 +17,7 @@ import {
   length, 
   isTrimmed } from '../../validators';
 
-const passwordLength = length({min: 4, max: 72});
+const passwordLength = length({min: 7, max: 72});
 const matchesPassword = matches('password');
 
 export class SignUpForm extends React.Component {
