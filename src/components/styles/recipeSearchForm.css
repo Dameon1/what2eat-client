@@ -12,6 +12,7 @@
   border-top: 25px solid #454545;
   background-color:white;
 }
+
 .recipeSearchButton {
   display: block;
   margin: 10px auto;
@@ -21,6 +22,7 @@
   background-color:#8FCFDE;
   height:35px;
 }
+
 .addIngredientForm {
   padding-bottom:10px;
   border: solid #454545 2px;

@@ -8,14 +8,12 @@
   border-radius:5px;
   max-width:600px;
   width:80%;
-
 }
+
 .landingPageHeader {
   text-align: center;
   font-size:150%;
-  
   padding-top:10px;
-  /* display:flex; */
 }
 
 .landingPageBox > .smallPrint {
@@ -23,7 +21,6 @@
   font-size: 80%;
   margin-top:5px;
   color:#454545;
-  
 }
 
 .landingPageBox > .onBoarding {
@@ -39,7 +36,8 @@
   width:100px;
   height:30px;
  }
-.buttonStyle:hover {
+
+ .buttonStyle:hover {
   background-color: #454545;
   color:#D3D4D4;
 }
