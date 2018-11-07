@@ -64,7 +64,7 @@ export class RecipeSearchForm extends React.Component {
     this.setState({
       items:[...this.state.items,value],
     });
-    this.input.value="";
+    
   }
 
   render() {

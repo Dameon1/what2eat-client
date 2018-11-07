@@ -16,6 +16,7 @@ export class Content extends React.Component {
       return <Spinner spinnername="circle" fadeIn='none' />;
   }
     return (
+      
       <div className='recipesDisplayBox'> 
         {this.props.apiRecipes.map((recipe,index) => (
           <MultipleRecipesDisplay { ...recipe } key={ index } index={ index }/>
