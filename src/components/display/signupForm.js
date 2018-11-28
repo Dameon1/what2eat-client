@@ -54,11 +54,11 @@ export class SignUpForm extends React.Component {
                 name="password"
                 validate={ [required, passwordLength, isTrimmed] }
                 />
-              <label htmlFor="Confirm password" className='signUpPasswordConfirmLabel'>Confirm password</label>
+              <label htmlFor="Confirm password" className='signUpPasswordConfirmLabel'>Confirm</label>
               <Field                  
                 component={ Input }
                 type="password"
-                name="Confirm password"
+                name="confirm password"
                 validate={ [required, nonEmpty, matchesPassword] }
                 />
               <button type="submit" disabled={ this.props.pristine || this.props.submitting } className='signInButton'>
