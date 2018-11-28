@@ -8,11 +8,9 @@ export default class Checkbox extends React.Component {
   }
 
   toggleCheckboxChange = () => {
-    const { handleCheckboxChange, label } = this.props;
     this.setState(({ isChecked }) => (
       { isChecked: !isChecked, }
     ));
-    handleCheckboxChange(label);
   }
 
   render() {
@@ -21,11 +19,12 @@ export default class Checkbox extends React.Component {
 
     return (
       <div className="checkbox" onClick={this.toggleCheckboxChange}>
-        <label>
+        <label onClick={this.toggleCheckboxChange}>
           <input
             type="checkbox"
             value={label}
-            checked={isChecked}           
+            checked={isChecked}
+            onClick={this.toggleCheckboxChange}           
           />
           {label}
         </label>
