@@ -11,13 +11,9 @@ import SingleRecipe from './SingleRecipe';
 import Footer from '../display/Footer';
 import '../styles/landingPage.css';
 import { connect } from 'react-redux';
-import { 
-  Route, 
-  withRouter } from 'react-router-dom';
-
+import { Route, withRouter } from 'react-router-dom';
 
 export class Container extends React.Component {
- 
   render() {
    return(
     <div>

@@ -1,6 +1,7 @@
+
 import React from 'react';
 import { shallow } from 'enzyme';
-import  { Dashboard }  from './Dashboard';
+import  { Content }  from '../components/containers/content';
 
 describe('<Content />', () => {
        
@@ -17,6 +18,6 @@ describe('<Content />', () => {
           apiRecipes:configs.apiRecipes,
           dispatch,
         }
-         shallow(<Dashboard {...props}/>);
+         shallow(<Content {...props}/>);
      });
 });
