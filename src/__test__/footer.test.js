@@ -1,6 +1,6 @@
 import React from 'react';
 import {shallow, mount} from 'enzyme';
-import  Footer  from './Footer';
+import  Footer  from '../components/display/footer';
 
 describe('<Footer />', () => {       
      it('Renders without crashing', () => {
