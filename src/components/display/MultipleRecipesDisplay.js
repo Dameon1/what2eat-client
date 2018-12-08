@@ -29,4 +29,3 @@ export function MultipleRecipesDisplay (props) {
 };
    
 export default connect()(MultipleRecipesDisplay);
-  
