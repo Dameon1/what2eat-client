@@ -5,7 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { registerUser } from '../../actions/createUser';
 import { login } from '../../actions/auth';
-import Input from './LoginInput';
+import Input from './loginInput';
 import {
   Field, 
   reduxForm, 

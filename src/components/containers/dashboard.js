@@ -1,6 +1,6 @@
 
 import React from 'react';
-import RecipeSearchForm  from '../display/RecipeSearchForm';
+import RecipeSearchForm  from '../display/recipeSearchForm';
 import '../styles/dashboard.css';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';

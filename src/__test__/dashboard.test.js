@@ -1,22 +1,21 @@
+//TODO fix recipeSearchForm to render from this test
 import React from 'react';
-import { shallow } from 'enzyme';
+import { shallow, mount } from 'enzyme';
 import  { Dashboard }  from '../components/containers/dashboard';
+import { testObj, store, configs, dispatch, props } from './testUtils';
+import { Provider } from 'react-redux';
 
-describe('<Content />', () => {
-       
-     it('Renders without crashing', () => {
-        const configs = {
-            default: true,
-            label: 'My Label',
-            element: 'myElement',
-            apiRecipes:[12232,1221]
-          }
-        const dispatch = jest.fn();
-
-        const props = {
-          apiRecipes:configs.apiRecipes,
-          dispatch,
-        }
-         shallow(<Dashboard {...props}/>);
+describe('<Content />', () => {       
+    it('Renders without crashing', () => {
+      shallow(<Dashboard {...props}/>);
      });
+
+     it('Renders the item without crashing', () => {
+      const wrapper =  mount(
+              <Provider store={store}>                             
+                  <Dashboard dispatch={dispatch} apiRecipes={[testObj]} state={store}/>                              
+              </Provider>
+              );
+      console.log(wrapper.debug());
+      })
 });

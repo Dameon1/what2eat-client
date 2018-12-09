@@ -27,7 +27,6 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "chai": "^4.2.0",
-    "redux-mock-provider": "^1.0.0"
+    "chai": "^4.2.0"
   }
 }

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import '../styles/userLogin.css';
-import Input from './LoginInput';
+import Input from './loginInput';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom'; 
 import { login } from '../../actions/auth';

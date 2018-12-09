@@ -1,6 +1,6 @@
 
 import React from 'react';
-import UserDisplayedRecipes from '../display/UserDisplayedRecipes';
+import UserDisplayedRecipes from '../display/userDisplayedRecipes';
 import { getUserRecipesInBulkFromSpoonacular } from '../../actions/userActions';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';

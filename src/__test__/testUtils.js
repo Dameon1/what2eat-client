@@ -12,7 +12,9 @@ import { initialState } from '../reducers/userReducer';
  };
 
  export const store = {      
-  state: initialState,
+  state: {
+    recipeReducer:jest.fn(),
+    ...initialState},
   getState: jest.fn(),
   subscribe: jest.fn(),
   dispatch: jest.fn(),
@@ -30,4 +32,4 @@ export const dispatch = jest.fn();
 export const props = {
     apiRecipes:configs.apiRecipes,
     dispatch,
-}
+  }

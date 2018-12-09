@@ -1,14 +1,14 @@
 
 import React from 'react';
-import Header from '../display/Header';
-import LandingPage from '../display/LandingPage';
+import Header from '../display/header';
+import LandingPage from '../display/landingPage';
 import LoginForm from '../display/userLogin';
-import SignUpForm from '../display/SignUpForm';
-import Dashboard from './Dashboard';
-import Content from './Content';
-import UserSavedRecipes from './UserSavedRecipes';
-import SingleRecipe from './SingleRecipe';
-import Footer from '../display/Footer';
+import SignUpForm from '../display/signupForm';
+import Dashboard from './dashboard';
+import Content from './content';
+import UserSavedRecipes from './userSavedRecipes';
+import SingleRecipe from './singleRecipe';
+import Footer from '../display/footer';
 import '../styles/landingPage.css';
 import { connect } from 'react-redux';
 import { Route, withRouter } from 'react-router-dom';
