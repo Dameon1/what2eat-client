@@ -16,6 +16,5 @@ describe('<Content />', () => {
                   <Dashboard dispatch={dispatch} apiRecipes={[testObj]} state={store}/>                              
               </Provider>
               );
-      console.log(wrapper.debug());
       })
 });
