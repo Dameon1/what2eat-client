@@ -8,6 +8,7 @@
     "enzyme-to-json": "^3.3.5",
     "jwt-decode": "^2.2.0",
     "netlify": "^1.2.0",
+    "prop-types": "^15.6.2",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",
@@ -28,10 +29,5 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "redux-mock-provider": "^1.0.0"
-  },
-  "jest": {
-    "setupFiles": [
-      "test/setup.js"
-    ]
   }
 }
