@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import  { SingleRecipe }  from '../components/containers/SingleRecipe';
+import  { SingleRecipe }  from '../components/containers/singleRecipe';
 
 describe('<SingleRecipe />', () => {
        
