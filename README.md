@@ -1,4 +1,5 @@
 # what2eat
+[![CircleCI](https://circleci.com/gh/Dameon1/what2eat-client.svg?style=svg)](https://circleci.com/gh/Dameon1/what2eat-client)
 
 ## Application details
 
