@@ -30,7 +30,7 @@ export class RecipeSearchForm extends React.Component {
     let queryString = '';
     if(this.selectedCheckboxes.size === 0) { return alert('Please select some ingredients') }
     for (const checkbox of this.selectedCheckboxes) {
-      queryString += checkbox+ ',';
+      queryString += checkbox + ',';
     };   
     let recipeString = queryString.slice(0,-1);
     this.props.dispatch(userIsSearching());
@@ -40,9 +40,9 @@ export class RecipeSearchForm extends React.Component {
   createCheckbox = label => {
     return (
       <Checkbox 
-        label= { label }
-        handleCheckboxChange= { this.toggleCheckbox }
-        key= { label }
+        label = { label }
+        handleCheckboxChange = { this.toggleCheckbox }
+        key = { label }
       />
     );
   };
@@ -60,7 +60,7 @@ export class RecipeSearchForm extends React.Component {
       return alert("Ingredient already included") 
     };
     if (value.trim().length<3) { 
-      return alert("Ingredient is invalid") 
+      return alert("Ingredient is invalid"); 
     };
     this.setState({
       items:[...this.state.items,value],
