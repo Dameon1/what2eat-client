@@ -23,7 +23,7 @@ export class Dashboard extends React.Component {
         }
       return (
         <div className="dashboard">
-          <div className="">
+          <div>
             <h2 className="dashboardHeading">
               Welcome { (this.props.loggedIn)? <span className="userNameTextForDashboardHeading">{ this.props.username.toUpperCase() } </span> : null } to what2eat 
             </h2>
@@ -32,7 +32,6 @@ export class Dashboard extends React.Component {
         </div>
       );
     };
-
 };
 
 const mapStateToProps = state => {

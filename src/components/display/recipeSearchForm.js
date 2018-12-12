@@ -51,7 +51,7 @@ export class RecipeSearchForm extends React.Component {
     this.state.items.map(this.createCheckbox)
   );
 
-  addIngredents = (e) => {
+  addIngredients = (e) => {
     e.preventDefault();
     let value = this.input.value;
     let recipeItemsToLowerCase = this.state.items.map(item => item.toLowerCase());
@@ -70,7 +70,7 @@ export class RecipeSearchForm extends React.Component {
   render() {
     return (
       <div>
-        <form className="addIngredientForm" onSubmit = { (e)=>this.addIngredents(e) } > 
+        <form className="addIngredientForm" onSubmit = { (e)=>this.addIngredients(e) } > 
           <label htmlFor="addIngredient" 
                  aria-labelledby="addIngredient"
                  className="addIngredientLabel" >

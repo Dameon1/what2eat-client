@@ -10,11 +10,11 @@ describe('<Content />', () => {
       shallow(<Dashboard {...props}/>);
      });
 
-     it('Renders the item without crashing', () => {
+     it('mounts without crashing', () => {
       const wrapper =  mount(
               <Provider store={store}>                             
                   <Dashboard dispatch={dispatch} apiRecipes={[testObj]} state={store}/>                              
               </Provider>
-              );
-      })
+              );        
+      });
 });

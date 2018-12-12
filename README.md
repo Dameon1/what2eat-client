@@ -3,7 +3,7 @@
 
 ## Application details
 
-- A Recipe finder that allows you to see recipes based on the ingredints you have and lets you see
+- A Recipe finder that allows you to see recipes based on the ingredients you have and lets you see
   how many you are missing for the particular recipe.
 - Navigating to the ** (Where to find page) will reveal a layout of a welcome page where you can make an          account to get full features or continue on to the recipe finder itself for quick access.
 - On selecting a recipe you will get a soft view of the instructions and how to make the desired
@@ -20,10 +20,10 @@ You can visit  [what2eat here](https://www.what2eat.website) !
 
 - The Sign up button at the top of the home page will lead you to a create an account form to enter your          details.
 - After signing up, you can pick from some predetermined ingredients in the checkboxes provided,
-  Or you can create your own, making the application more versitile for production.
-- Upon searching, the screen will be poplulated with recipes that closely match your desired inputs, with         recipe overviews that includes images of the disered outcom, also information including how many of your 
+  Or you can create your own, making the application more versatile for production.
+- Upon searching, the screen will be populated with recipes that closely match your desired inputs, with         recipe overviews that includes images of the desired outcome, also information including how many of your 
   ingredients are used in the recipe and how many ingredients you are missing, with an option to go to the recipe overview.
-- At the recipe overview page , you will be greated you with a larger view of the recipe outcome picture
+- At the recipe overview page , you will be greeted with a larger view of the recipe outcome picture
   along with a list of instructions and a save button if you want to keep it around for quick access.
 - Once you have saved a few recipes there is a separate page that keeps track of all the recipes you have
   saved in the MyRecipes link provide at the top of the page.
@@ -59,7 +59,7 @@ change and make a pull request. I styled this app with the simplest of styles.
 - [JWT-decode](https://www.npmjs.com/package/jwt-decode) - Verification
 - [Mongo](https://www.mongodb.com) - The database used to store information
 - [Mongoose](http://mongoosejs.com/docs/guide.html) - Framework used to access DB
-- [Node.js](https://nodejs.org/en) - Runtime enviorment for package management
+- [Node.js](https://nodejs.org/en) - Runtime environment for package management
 - [Express.js](https://expressjs.com) - Framework used for the application
 - [bcrypt.js](https://www.npmjs.com/package/bcryptjs) - For security of user accounts
 
