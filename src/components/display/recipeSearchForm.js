@@ -21,9 +21,10 @@ export class RecipeSearchForm extends React.Component {
   toggleCheckbox = label => {
     if (this.selectedCheckboxes.has(label)) {
       this.selectedCheckboxes.delete(label);
-    }; 
+    } else { 
     this.selectedCheckboxes.add(label);
-  };
+  }
+}
 
   handleFormSubmit = formSubmitEvent => {
     formSubmitEvent.preventDefault();
