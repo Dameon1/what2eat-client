@@ -34,6 +34,7 @@ export class RecipeSearchForm extends React.Component {
       queryString += checkbox + ',';
     };   
     let recipeString = queryString.slice(0,-1);
+    console.log(recipeString)
     this.props.dispatch(userIsSearching());
     this.props.dispatch(fetchRecipesFromSpoonacular(recipeString));
   };
