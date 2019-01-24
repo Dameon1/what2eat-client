@@ -1,19 +1,16 @@
-
-import React from 'react';
-import '../styles/checkbox.css';
+import React from "react";
+import "../styles/checkbox.css";
 
 export default class Checkbox extends React.Component {
   state = {
-    isChecked: false,
-  }
+    isChecked: false
+  };
 
   toggleCheckboxChange = () => {
     const { handleCheckboxChange, label } = this.props;
-    this.setState(({ isChecked }) => (
-      { isChecked: !isChecked, }
-    ));
+    this.setState(({ isChecked }) => ({ isChecked: !isChecked }));
     handleCheckboxChange(label);
-  }
+  };
 
   render() {
     const { label } = this.props;
@@ -26,11 +23,11 @@ export default class Checkbox extends React.Component {
             type="checkbox"
             value={label}
             checked={isChecked}
-            onClick={this.toggleCheckboxChange}           
+            onClick={this.toggleCheckboxChange}
           />
           {label}
         </label>
       </div>
     );
-  };
-};
+  }
+}

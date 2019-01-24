@@ -1,10 +1,9 @@
-import React from 'react';
-import { shallow, mount} from 'enzyme';
-import {MultipleRecipesDisplay} from '../components/display/MultipleRecipesDisplay';
+import React from "react";
+import { shallow, mount } from "enzyme";
+import { MultipleRecipesDisplay } from "../components/display/MultipleRecipesDisplay";
 
-describe('<MultipleRecipesDisplay />', () => {
-  it('renders without crashing', () => {
+describe("<MultipleRecipesDisplay />", () => {
+  it("renders without crashing", () => {
     shallow(<MultipleRecipesDisplay />);
   });
-  
-})
+});
